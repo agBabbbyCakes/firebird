@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Ape Framework — Build and Explore on-chain with Python</title>
+        <meta name="description" content="Ape Framework is an easy-to-use Web3 development tool. Compile, test, and interact with smart contracts in one CLI session." />
+        <meta name="theme-color" content="#000000" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="/assets/styles.css" />
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    </head>
+    <body class="h-full bg-black text-neutral-200">
+        <div class="relative min-h-screen bg-app-gradient">
+            <div class="grid-overlay"></div>
+
+            <header class="relative" x-data="{ mobileOpen: false }">
+                <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8">
+                    <div class="flex items-center justify-between">
+                        <a href="/" class="inline-flex items-center gap-2">
+                            <span class="relative flex h-6 w-6 items-center justify-center">
+                                <span class="absolute inline-block h-6 w-6 rounded-full bg-cyan-400/20 blur-sm"></span>
+                                <span class="relative inline-block h-2.5 w-2.5 rounded-sm bg-accent"></span>
+                            </span>
+                            <span class="font-semibold tracking-tight text-neutral-100">ApeWorx</span>
+                        </a>
+                        <nav class="hidden gap-6 text-sm text-neutral-300 sm:flex">
+                            <a href="/framework" class="hover:text-white">Ape Framework</a>
+                            <a href="/silverback" class="hover:text-white">Silverback</a>
+                            <a href="https://github.com/ApeWorX" target="_blank" rel="noreferrer" class="hover:text-white">GitHub</a>
+                        </nav>
+                        <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-neutral-300 hover:text-white hover:bg-white/10 sm:hidden" @click="mobileOpen = true" aria-label="Open menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M3.75 5.25A.75.75 0 014.5 4.5h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm0 7.5a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm.75 6.75a.75.75 0 000 1.5h15a.75.75 0 000-1.5h-15z" clip-rule="evenodd"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <section class="relative pt-20 pb-16 sm:pt-28 sm:pb-24">
+                    <div class="mx-auto max-w-7xl px-6 sm:px-8">
+                        <div class="relative mx-auto max-w-3xl text-center">
+                            <div class="pointer-events-none absolute -top-24 left-1/2 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl"></div>
+                            <h1 class="text-4xl font-semibold tracking-tight text-neutral-100 sm:text-6xl">
+                                Ape Framework
+                            </h1>
+                            <p class="mx-auto mt-5 max-w-2xl text-base text-neutral-400 sm:text-lg">
+                                Ape Framework is an easy-to-use Web3 development tool. Users can compile, test, and interact with smart contracts all in one command line session. With our modular plugin system, Ape supports multiple contract languages and chains.
+                            </p>
+                            <div class="mx-auto mt-8 flex max-w-2xl flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+                                <a href="/downloads/install-ape.sh" download class="btn btn--primary">Download installer (macOS/Linux)</a>
+                                <a href="/downloads/install-ape.ps1" download class="btn btn--outline">Download installer (Windows)</a>
+                            </div>
+                            <div class="mx-auto mt-4 flex max-w-2xl flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+                                <a href="https://docs.apeworx.io/" target="_blank" rel="noreferrer" class="btn btn--outline">Read the Docs</a>
+                                <a href="/" class="btn btn--outline">Back to Home</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="relative border-t border-white/5 py-10 text-center text-xs text-neutral-500">
+                <div class="mx-auto max-w-7xl px-6 sm:px-8">
+                    <p>&copy; <span x-data x-text="new Date().getFullYear()"></span> ApeWorx.</p>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
+
