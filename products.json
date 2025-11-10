@@ -1,6 +1,6 @@
 [
-  {"name": "Ape Framework", "slug": "framework", "status": "active", "description": "Develop and deploy smart contracts in Python."},
-  {"name": "Silverback", "slug": "silverback", "status": "active", "description": "Blockchain data pipelines and dashboards."},
+  {"name": "Ape Framework", "slug": "framework", "status": "active", "description": "Build and Explore on-chain with Python."},
+  {"name": "Silverback", "slug": "silverback", "status": "active", "description": "Build your next bot with Silverback."},
   {"name": "ChaosNet", "slug": "chaosnet", "status": "in-dev", "description": "Experiment with multi-chain test networks."},
   {"name": "ApePay", "slug": "apepay", "status": "coming-soon", "description": "Simple on-chain payments API."},
   {"name": "Academy", "slug": "academy", "status": "in-dev", "description": "Learn blockchain development the Pythonic way."},
