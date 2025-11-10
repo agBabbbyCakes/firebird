@@ -47,28 +47,9 @@
       };
     </script>
         <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="/assets/styles.css" />
         <script defer
             src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        <style>
-      /* Subtle grid overlay, masked to fade towards edges */
-      .grid-overlay {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background:
-          linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px) 0 0 / 40px 40px,
-          linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px) 0 0 / 40px 40px;
-        mask-image: radial-gradient(60% 60% at 50% 35%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,1) 100%);
-        opacity: 0.25;
-      }
-      .hover-glow:hover {
-        box-shadow: 0 0 0 1px rgba(0,255,255,0.25), 0 0 40px rgba(0,255,255,0.25);
-      }
-      .backdrop-blur-md {
-        -webkit-backdrop-filter: blur(12px);
-        backdrop-filter: blur(12px);
-      }
-    </style>
     </head>
     <body
         class="h-full bg-black text-neutral-200 selection:bg-cyan-400/20 selection:text-cyan-100">
@@ -76,7 +57,7 @@
             <div class="grid-overlay"></div>
 
             <!-- Top navigation (minimal) -->
-            <header class="relative">
+            <header class="relative" x-data="{ mobileOpen: false }">
                 <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8">
                     <div class="flex items-center justify-between">
                         <a href="/" class="inline-flex items-center gap-2">
@@ -99,9 +80,64 @@
                                 rel="noreferrer"
                                 class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60">GitHub</a>
                         </nav>
+                        <button
+                            type="button"
+                            class="inline-flex items-center justify-center rounded-md p-2 text-neutral-300 hover:text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 sm:hidden"
+                            @click="mobileOpen = true"
+                            :aria-expanded="mobileOpen ? 'true' : 'false'"
+                            aria-label="Open menu"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3.75 5.25A.75.75 0 014.5 4.5h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm0 7.5a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm.75 6.75a.75.75 0 000 1.5h15a.75.75 0 000-1.5h-15z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </header>
+            <!-- Mobile menu overlay -->
+            <div
+                class="fixed inset-0 z-50 sm:hidden"
+                x-show="mobileOpen"
+                x-transition.opacity
+                style="display: none;"
+            >
+                <div class="absolute inset-0 bg-black/70 backdrop-blur-md" @click="mobileOpen = false"></div>
+                <div
+                    class="absolute right-0 top-0 h-full w-72 max-w-[85vw] bg-[#0d0f11] shadow-xl ring-1 ring-white/10"
+                    x-transition:enter="transition transform duration-200"
+                    x-transition:enter-start="translate-x-full"
+                    x-transition:enter-end="translate-x-0"
+                    x-transition:leave="transition transform duration-150"
+                    x-transition:leave-start="translate-x-0"
+                    x-transition:leave-end="translate-x-full"
+                    @click.outside="mobileOpen = false"
+                >
+                    <div class="flex items-center justify-between px-4 py-4">
+                        <span class="text-sm font-semibold text-neutral-200">Menu</span>
+                        <button
+                            class="rounded-md p-2 text-neutral-300 hover:text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
+                            @click="mobileOpen = false"
+                            aria-label="Close menu"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M6.225 4.811a.75.75 0 011.06 0L12 9.525l4.715-4.714a.75.75 0 111.06 1.06L13.06 10.586l4.715 4.714a.75.75 0 11-1.06 1.061L12 11.646l-4.715 4.715a.75.75 0 11-1.06-1.06L10.94 10.586 6.225 5.87a.75.75 0 010-1.06z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <nav class="px-4 pb-6">
+                        <a href="#hero" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Home</a>
+                        <a href="#ecosystem" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ecosystem</a>
+                        <a href="#ape-stack" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ape Stack</a>
+                        <a href="#community" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Community</a>
+                        <a href="#next-steps" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Next Steps</a>
+                        <div class="my-3 h-px bg-white/10"></div>
+                        <a href="/framework" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ape Framework</a>
+                        <a href="https://docs.apeworx.io/" target="_blank" rel="noreferrer" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Docs</a>
+                        <a href="https://github.com/ApeWorX" target="_blank" rel="noreferrer" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">GitHub</a>
+                        <a href="https://discord.gg/apeworx" target="_blank" rel="noreferrer" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Discord</a>
+                    </nav>
+                </div>
+            </div>
 
             <!-- Hero -->
             <main>
