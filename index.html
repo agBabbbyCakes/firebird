@@ -262,7 +262,8 @@
                                         <!-- Status badge top-right -->
                                         <div
                                             class="pointer-events-none absolute right-3 top-3 z-10">
-                                            <span class="pill" x-text="statusText(p.status)"></span>
+                                            <span class="pill"
+                                                x-text="statusText(p.status)"></span>
                                         </div>
 
                                         <div class="flex items-start gap-4">
@@ -319,7 +320,8 @@
                                             :href="'/' + item.slug"
                                             class="chip">
                                             <span class="dot"></span>
-                                            <span class="font-medium" x-text="item.name"></span>
+                                            <span class="font-medium"
+                                                x-text="item.name"></span>
                                         </a>
                                         <template
                                             x-if="idx < ordered.length - 1">
