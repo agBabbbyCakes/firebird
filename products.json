@@ -1,6 +1,6 @@
 [
   {"name": "Ape Framework", "slug": "framework", "status": "active", "description": "Ape Framework is an easy-to-use Web3 development tool. Users can compile, test, and interact with smart contracts all in one command line session. With our modular plugin system, Ape supports multiple contract languages and chains."},
-  {"name": "Silverback", "slug": "silverback", "status": "active", "description": "Build your next bot with Silverback."},
+  {"name": "Silverback", "slug": "silverback", "status": "active", "description": "Silverback lets you create and deploy your own Python bots that respond to on-chain events. The Silverback library leverages the Ape development framework as well as its ecosystem of plugins and packages to enable you to develop simple-yet-sophisticated automated applications that can listen and respond to live chain data. Silverback applications are excellent for use cases that involve continuously monitoring and responding to on-chain events, such as newly confirmed blocks or contract event logs."},
   {"name": "ChaosNet", "slug": "chaosnet", "status": "in-dev", "description": "Experiment with multi-chain test networks."},
   {"name": "ApePay", "slug": "apepay", "status": "coming-soon", "description": "Simple on-chain payments API."},
   {"name": "Academy", "slug": "academy", "status": "in-dev", "description": "Learn blockchain development the Pythonic way."},

@@ -138,6 +138,46 @@
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
+/* Product spotlights */
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.feature {
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.06);
+    padding: 1.5rem;
+}
+
+.feature h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--color-text);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.feature p {
+    color: var(--color-text-dim);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+.feature .actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
 /* Card grid (Ecosystem) */
 .card-grid {
     display: grid;
