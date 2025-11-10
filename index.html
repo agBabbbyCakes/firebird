@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>ApeWorx — Build and explore on-chain with Python</title>
+        <meta name="description"
+            content="ApeWorx builds open-source tools for smart contract engineers, researchers, and data scientists." />
+        <meta name="theme-color" content="#000000" />
+        <link rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewBox='0 0 128 128'%3E%3Ccircle cx='64' cy='64' r='64' fill='%23000000'/%3E%3Cpath d='M64 24c17.673 0 32 14.327 32 32S81.673 88 64 88 32 73.673 32 56 46.327 24 64 24z' fill='%2300FFFF' fill-opacity='.9'/%3E%3C/svg%3E" />
+        <meta name="color-scheme" content="dark" />
+        <script>
+      // Tailwind CDN configuration (must be defined before the script below)
+      window.tailwind = window.tailwind || {};
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              accent: '#00FFFF'
+            },
+            boxShadow: {
+              'accent-soft': '0 0 0 1px rgba(0,255,255,0.25), 0 0 24px rgba(0,255,255,0.18)',
+              'accent-strong': '0 0 0 1px rgba(0,255,255,0.35), 0 0 48px rgba(0,255,255,0.3)'
+            },
+            backgroundImage: {
+              'app-gradient': 'linear-gradient(to bottom, rgb(10 10 10), rgb(0 0 0))'
+            }
+          }
+        }
+      };
+    </script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script defer
+            src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <style>
+      /* Subtle grid overlay, masked to fade towards edges */
+      .grid-overlay {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px) 0 0 / 40px 40px,
+          linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px) 0 0 / 40px 40px;
+        mask-image: radial-gradient(60% 60% at 50% 35%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,1) 100%);
+        opacity: 0.25;
+      }
+      .hover-glow:hover {
+        box-shadow: 0 0 0 1px rgba(0,255,255,0.25), 0 0 40px rgba(0,255,255,0.25);
+      }
+      .backdrop-blur-md {
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+      }
+    </style>
+    </head>
+    <body
+        class="h-full bg-black text-neutral-200 selection:bg-cyan-400/20 selection:text-cyan-100">
+        <div class="relative min-h-screen bg-app-gradient">
+            <div class="grid-overlay"></div>
+
+            <!-- Top navigation (minimal) -->
+            <header class="relative">
+                <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8">
+                    <div class="flex items-center justify-between">
+                        <a href="/" class="inline-flex items-center gap-2">
+                            <span
+                                class="relative flex h-6 w-6 items-center justify-center">
+                                <span
+                                    class="absolute inline-block h-6 w-6 rounded-full bg-cyan-400/20 blur-sm"></span>
+                                <span
+                                    class="relative inline-block h-2.5 w-2.5 rounded-sm bg-accent"></span>
+                            </span>
+                            <span
+                                class="font-semibold tracking-tight text-neutral-100">ApeWorx</span>
+                        </a>
+                        <nav
+                            class="hidden gap-6 text-sm text-neutral-400 sm:flex">
+                            <a href="/framework"
+                                class="hover:text-neutral-200">Ape Framework</a>
+                            <a href="https://github.com/ApeWorX" target="_blank"
+                                rel="noreferrer"
+                                class="hover:text-neutral-200">GitHub</a>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero -->
+            <main>
+                <section id="hero"
+                    class="relative pt-20 pb-16 sm:pt-28 sm:pb-24">
+                    <div class="mx-auto max-w-7xl px-6 sm:px-8">
+                        <div class="relative mx-auto max-w-3xl text-center">
+                            <!-- Accent glow blob -->
+                            <div
+                                class="pointer-events-none absolute -top-24 left-1/2 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl"></div>
+
+                            <div
+                                x-data="{ show: false }"
+                                x-init="setTimeout(() => show = true, 40)"
+                                :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'"
+                                class="transition-all duration-700 will-change-transform">
+                                <div
+                                    class="mb-5 flex items-center justify-center">
+                                    <span
+                                        class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur-md">
+                                        <span
+                                            class="h-1.5 w-1.5 rounded-full bg-accent/90 shadow-[0_0_14px_rgba(0,255,255,0.7)]"></span>
+                                        Open-source Python tooling for on-chain
+                                        builders
+                                    </span>
+                                </div>
+
+                                <h1
+                                    class="mx-auto max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-neutral-100 sm:text-6xl">
+                                    Build and explore on-chain with <span
+                                        class="text-accent">Python</span>
+                                </h1>
+
+                                <p
+                                    class="mx-auto mt-5 max-w-2xl text-base text-neutral-400 sm:text-lg">
+                                    ApeWorx builds open-source tools for smart
+                                    contract engineers, researchers, and data
+                                    scientists.
+                                </p>
+
+                                <div
+                                    class="mx-auto mt-8 flex max-w-xl flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+                                    <a
+                                        href="/framework"
+                                        class="hover-glow inline-flex w-full items-center justify-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-medium text-black shadow-accent-soft transition-colors hover:shadow-accent-strong sm:w-auto">
+                                        Get Started with Ape
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M10.293 3.293a1 1 0 011.414 0l5 5a.997.997 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                    <a
+                                        href="https://github.com/ApeWorX"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-cyan-400/40 bg-white/5 px-5 py-3 text-sm font-medium text-neutral-100 transition hover:brightness-110 sm:w-auto">
+                                        View on GitHub
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M12.293 2.293a1 1 0 011.414 0l4 4a.997.997 0 010 1.414l-9 9A1 1 0 017.707 17H4a1 1 0 01-1-1v-3.707a1 1 0 01.293-.707l9-9zM5 13v2h2l8-8-2-2-8 8z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Ecosystem Grid -->
+                <section id="ecosystem" class="relative py-12 sm:py-16">
+                    <div class="mx-auto max-w-7xl px-6 sm:px-8">
+                        <div class="mb-8 sm:mb-10">
+                            <h2 class="text-center text-2xl font-semibold tracking-tight text-neutral-100 sm:text-3xl">
+                                ApeWorx Ecosystem
+                            </h2>
+                            <p class="mt-2 text-center text-sm text-neutral-400 sm:text-base">
+                                Explore live tools and what we're building next.
+                            </p>
+                        </div>
+
+                        <div x-data="ecosystem()" x-init="load()">
+                            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                <template x-for="p in products" :key="p.slug">
+                                    <a
+                                        :href="'/' + p.slug"
+                                        class="relative overflow-hidden rounded-lg border border-white/10 bg-white/5 p-4 transition hover:brightness-110"
+                                        :class="statusCardClass(p.status)"
+                                    >
+                                        <!-- Status badge top-right -->
+                                        <div class="pointer-events-none absolute right-3 top-3 z-10">
+                                            <span
+                                                class="rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide"
+                                                :class="statusPillClass(p.status)"
+                                                x-text="statusText(p.status)"
+                                            ></span>
+                                        </div>
+
+                                        <div class="flex items-start gap-4">
+                                            <!-- Placeholder Logo -->
+                                            <div class="relative h-12 w-12 shrink-0 overflow-hidden rounded-md border border-white/10 bg-gradient-to-br from-cyan-400/20 to-transparent">
+                                                <div class="absolute inset-0 flex items-center justify-center">
+                                                    <span class="text-xs font-semibold text-cyan-300" x-text="p.name.split(' ').map(s => s[0]).slice(0,2).join('')"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="min-w-0">
+                                                <h3 class="truncate text-base font-semibold text-neutral-100" x-text="p.name"></h3>
+                                                <p class="mt-1 line-clamp-2 text-sm text-neutral-400" x-text="p.description"></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Ape Stack Flow -->
+                <section id="ape-stack" class="relative py-12 sm:py-16">
+                    <div class="mx-auto max-w-7xl px-6 sm:px-8">
+                        <div class="mb-8 sm:mb-10">
+                            <h2 class="text-center text-2xl font-semibold tracking-tight text-neutral-100 sm:text-3xl">
+                                The Ape Stack — Tools for Every Layer of Web3 Development
+                            </h2>
+                        </div>
+                        <div x-data="stack()" class="overflow-x-auto">
+                            <div class="flex items-center justify-center gap-3 sm:gap-4 min-w-max">
+                                <template x-for="(item, idx) in ordered" :key="item.slug">
+                                    <div class="flex items-center gap-3 sm:gap-4">
+                                        <a
+                                            :href="'/' + item.slug"
+                                            class="group inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-neutral-200 transition hover:border-cyan-400/40 hover:bg-white/10"
+                                        >
+                                            <span class="inline-flex h-2 w-2 rounded-sm bg-accent/80 shadow-[0_0_10px_rgba(0,255,255,0.5)]"></span>
+                                            <span class="font-medium" x-text="item.name"></span>
+                                        </a>
+                                        <template x-if="idx < ordered.length - 1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-300/70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586a1 1 0 010 1.414l-5.293 5.293a1 1 0 01-1.414-1.414L10.586 11H3a1 1 0 110-2h7.586L7.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </template>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer
+                class="relative border-t border-white/5 py-10 text-center text-xs text-neutral-500">
+                <div class="mx-auto max-w-7xl px-6 sm:px-8">
+                    <p>&copy; <span x-data
+                            x-text="new Date().getFullYear()"></span> ApeWorx.
+                        Open-source and community-driven.</p>
+                </div>
+            </footer>
+        </div>
+
+    <!-- Alpine helpers -->
+    <script>
+      function ecosystem() {
+        return {
+          products: [],
+          async load() {
+            try {
+              const res = await fetch('products.json', { cache: 'no-cache' });
+              if (!res.ok) throw new Error('Failed to load products.json');
+              this.products = await res.json();
+            } catch (e) {
+              console.error(e);
+              this.products = [];
+            }
+          },
+          statusText(status) {
+            if (status === 'active') return 'Active';
+            if (status === 'in-dev') return 'In Development';
+            if (status === 'coming-soon') return 'Coming Soon';
+            return status;
+          },
+          statusCardClass(status) {
+            if (status === 'active') return '';
+            if (status === 'in-dev') return 'opacity-70 grayscale';
+            if (status === 'coming-soon') return 'opacity-40 grayscale hover:opacity-70';
+            return '';
+          },
+          statusPillClass(status) {
+            if (status === 'active') return 'bg-cyan-400/20 text-cyan-200 border border-cyan-400/30';
+            if (status === 'in-dev') return 'bg-yellow-400/10 text-yellow-200 border border-yellow-400/20';
+            if (status === 'coming-soon') return 'bg-neutral-700/60 text-neutral-200 border border-white/10';
+            return 'bg-white/10 text-white/60 border border-white/10';
+          }
+        };
+      }
+      function stack() {
+        return {
+          ordered: [
+            { name: 'Ape Framework', slug: 'framework' },
+            { name: 'Silverback', slug: 'silverback' },
+            { name: 'ChaosNet', slug: 'chaosnet' },
+            { name: 'ApePay', slug: 'apepay' },
+            { name: 'Academy', slug: 'academy' }
+          ]
+        };
+      }
+    </script>
+    </body>
+</html>
