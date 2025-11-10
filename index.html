@@ -85,10 +85,13 @@
                             class="inline-flex items-center justify-center rounded-md p-2 text-neutral-300 hover:text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 sm:hidden"
                             @click="mobileOpen = true"
                             :aria-expanded="mobileOpen ? 'true' : 'false'"
-                            aria-label="Open menu"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-                                <path fill-rule="evenodd" d="M3.75 5.25A.75.75 0 014.5 4.5h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm0 7.5a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm.75 6.75a.75.75 0 000 1.5h15a.75.75 0 000-1.5h-15z" clip-rule="evenodd"/>
+                            aria-label="Open menu">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M3.75 5.25A.75.75 0 014.5 4.5h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm0 7.5a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm.75 6.75a.75.75 0 000 1.5h15a.75.75 0 000-1.5h-15z"
+                                    clip-rule="evenodd" />
                             </svg>
                         </button>
                     </div>
@@ -99,9 +102,9 @@
                 class="fixed inset-0 z-50 sm:hidden"
                 x-show="mobileOpen"
                 x-transition.opacity
-                style="display: none;"
-            >
-                <div class="absolute inset-0 bg-black/70 backdrop-blur-md" @click="mobileOpen = false"></div>
+                style="display: none;">
+                <div class="absolute inset-0 bg-black/70 backdrop-blur-md"
+                    @click="mobileOpen = false"></div>
                 <div
                     class="absolute right-0 top-0 h-full w-72 max-w-[85vw] bg-[#0d0f11] shadow-xl ring-1 ring-white/10"
                     x-transition:enter="transition transform duration-200"
@@ -110,31 +113,49 @@
                     x-transition:leave="transition transform duration-150"
                     x-transition:leave-start="translate-x-0"
                     x-transition:leave-end="translate-x-full"
-                    @click.outside="mobileOpen = false"
-                >
+                    @click.outside="mobileOpen = false">
                     <div class="flex items-center justify-between px-4 py-4">
-                        <span class="text-sm font-semibold text-neutral-200">Menu</span>
+                        <span
+                            class="text-sm font-semibold text-neutral-200">Menu</span>
                         <button
                             class="rounded-md p-2 text-neutral-300 hover:text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
                             @click="mobileOpen = false"
-                            aria-label="Close menu"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-                                <path fill-rule="evenodd" d="M6.225 4.811a.75.75 0 011.06 0L12 9.525l4.715-4.714a.75.75 0 111.06 1.06L13.06 10.586l4.715 4.714a.75.75 0 11-1.06 1.061L12 11.646l-4.715 4.715a.75.75 0 11-1.06-1.06L10.94 10.586 6.225 5.87a.75.75 0 010-1.06z" clip-rule="evenodd"/>
+                            aria-label="Close menu">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M6.225 4.811a.75.75 0 011.06 0L12 9.525l4.715-4.714a.75.75 0 111.06 1.06L13.06 10.586l4.715 4.714a.75.75 0 11-1.06 1.061L12 11.646l-4.715 4.715a.75.75 0 11-1.06-1.06L10.94 10.586 6.225 5.87a.75.75 0 010-1.06z"
+                                    clip-rule="evenodd" />
                             </svg>
                         </button>
                     </div>
                     <nav class="px-4 pb-6">
-                        <a href="#hero" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Home</a>
-                        <a href="#ecosystem" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ecosystem</a>
-                        <a href="#ape-stack" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ape Stack</a>
-                        <a href="#community" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Community</a>
-                        <a href="#next-steps" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Next Steps</a>
+                        <a href="#hero" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Home</a>
+                        <a href="#ecosystem" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ecosystem</a>
+                        <a href="#ape-stack" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ape
+                            Stack</a>
+                        <a href="#community" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Community</a>
+                        <a href="#next-steps" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Next
+                            Steps</a>
                         <div class="my-3 h-px bg-white/10"></div>
-                        <a href="/framework" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ape Framework</a>
-                        <a href="https://docs.apeworx.io/" target="_blank" rel="noreferrer" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Docs</a>
-                        <a href="https://github.com/ApeWorX" target="_blank" rel="noreferrer" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">GitHub</a>
-                        <a href="https://discord.gg/apeworx" target="_blank" rel="noreferrer" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Discord</a>
+                        <a href="/framework" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ape
+                            Framework</a>
+                        <a href="https://docs.apeworx.io/" target="_blank"
+                            rel="noreferrer"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Docs</a>
+                        <a href="https://github.com/ApeWorX" target="_blank"
+                            rel="noreferrer"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">GitHub</a>
+                        <a href="https://discord.gg/apeworx" target="_blank"
+                            rel="noreferrer"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Discord</a>
                     </nav>
                 </div>
             </div>
@@ -182,7 +203,7 @@
                                     class="mx-auto mt-8 flex max-w-xl flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
                                     <a
                                         href="/framework"
-                                        class="hover-glow inline-flex w-full items-center justify-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-medium text-black ring-1 ring-white/30 shadow-accent-strong transition-colors hover:shadow-accent-strong focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:w-auto">
+                                        class="btn btn--primary">
                                         Get Started with Ape
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="h-4 w-4" viewBox="0 0 20 20"
@@ -196,7 +217,7 @@
                                         href="https://github.com/ApeWorX"
                                         target="_blank"
                                         rel="noreferrer"
-                                        class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-cyan-400/70 bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 sm:w-auto">
+                                        class="btn btn--outline">
                                         View on GitHub
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="h-4 w-4" viewBox="0 0 20 20"
@@ -232,20 +253,16 @@
                         </div>
 
                         <div x-data="ecosystem()" x-init="load()">
-                            <div
-                                class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                            <div class="card-grid">
                                 <template x-for="p in products" :key="p.slug">
                                     <a
                                         :href="'/' + p.slug"
-                                        class="relative overflow-hidden rounded-lg border border-white/10 bg-white/5 p-4 transition hover:brightness-110"
-                                        :class="statusCardClass(p.status)">
+                                        class="card"
+                                        :data-status="p.status">
                                         <!-- Status badge top-right -->
                                         <div
                                             class="pointer-events-none absolute right-3 top-3 z-10">
-                                            <span
-                                                class="rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide"
-                                                :class="statusPillClass(p.status)"
-                                                x-text="statusText(p.status)"></span>
+                                            <span class="pill" x-text="statusText(p.status)"></span>
                                         </div>
 
                                         <div class="flex items-start gap-4">
@@ -300,11 +317,9 @@
                                         class="flex items-center gap-3 sm:gap-4">
                                         <a
                                             :href="'/' + item.slug"
-                                            class="group inline-flex items-center gap-2 rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm text-neutral-100 transition hover:border-cyan-400/60 hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60">
-                                            <span
-                                                class="inline-flex h-2 w-2 rounded-sm bg-accent/80 shadow-[0_0_10px_rgba(0,255,255,0.5)]"></span>
-                                            <span class="font-medium"
-                                                x-text="item.name"></span>
+                                            class="chip">
+                                            <span class="dot"></span>
+                                            <span class="font-medium" x-text="item.name"></span>
                                         </a>
                                         <template
                                             x-if="idx < ordered.length - 1">
@@ -405,7 +420,7 @@
                         <div class="mt-8 flex justify-center">
                             <a href="https://discord.gg/apeworx" target="_blank"
                                 rel="noreferrer"
-                                class="hover-glow inline-flex items-center justify-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-medium text-black shadow-accent-soft transition-colors hover:shadow-accent-strong focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60">
+                                class="btn btn--primary">
                                 Join Discord
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="h-4 w-4" viewBox="0 0 20 20"
@@ -439,7 +454,7 @@
                                 class="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
                                 <a href="https://docs.apeworx.io/"
                                     target="_blank" rel="noreferrer"
-                                    class="hover-glow inline-flex w-full items-center justify-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-medium text-black ring-1 ring-white/30 shadow-accent-strong transition-colors hover:shadow-accent-strong focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:w-auto">
+                                    class="btn btn--primary">
                                     Read the Docs
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         class="h-4 w-4" viewBox="0 0 20 20"
@@ -451,7 +466,7 @@
                                 </a>
                                 <a href="https://discord.gg/apeworx"
                                     target="_blank" rel="noreferrer"
-                                    class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-cyan-400/70 bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 sm:w-auto">
+                                    class="btn btn--outline">
                                     Join the Community
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         class="h-4 w-4" viewBox="0 0 20 20"
@@ -463,7 +478,7 @@
                                 </a>
                                 <a href="https://github.com/ApeWorX"
                                     target="_blank" rel="noreferrer"
-                                    class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-cyan-400/70 bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 sm:w-auto">
+                                    class="btn btn--outline">
                                     Contribute on GitHub
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         class="h-4 w-4" viewBox="0 0 20 20"
@@ -510,18 +525,7 @@
             if (status === 'coming-soon') return 'Coming Soon';
             return status;
           },
-          statusCardClass(status) {
-            if (status === 'active') return '';
-            if (status === 'in-dev') return 'opacity-85 grayscale';
-            if (status === 'coming-soon') return 'opacity-55 grayscale hover:opacity-75';
-            return '';
-          },
-          statusPillClass(status) {
-            if (status === 'active') return 'bg-cyan-400/20 text-cyan-200 border border-cyan-400/30';
-            if (status === 'in-dev') return 'bg-yellow-400/10 text-yellow-200 border border-yellow-400/20';
-            if (status === 'coming-soon') return 'bg-neutral-700/60 text-neutral-200 border border-white/10';
-            return 'bg-white/10 text-white/60 border border-white/10';
-          }
+          
         };
       }
       function stack() {
