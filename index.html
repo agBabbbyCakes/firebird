@@ -243,7 +243,22 @@
                             </h2>
                         </div>
                         <div class="feature-grid">
-                            <div class="feature">
+                            <div class="feature" x-data="{
+                                variant: 'pipx',
+                                copied: false,
+                                cmds: {
+                                    pipx: 'pipx install eth-ape',
+                                    pip: 'pip install eth-ape',
+                                    poetry: 'poetry add eth-ape'
+                                },
+                                async copyNow() {
+                                    try {
+                                        await navigator.clipboard.writeText(this.cmds[this.variant]);
+                                        this.copied = true;
+                                        setTimeout(() => this.copied = false, 1400);
+                                    } catch(e) { console.error(e); }
+                                }
+                            }">
                                 <h3>Ape Framework</h3>
                                 <p>Ape Framework is an easy-to-use Web3
                                     development tool. Users can compile, test,
@@ -255,13 +270,50 @@
                                     <a href="/framework"
                                         class="btn btn--primary">Get started
                                         with Ape</a>
+                                    <div class="install-group">
+                                        <span class="code-chip"
+                                            x-text="cmds[variant]"></span>
+                                        <button type="button"
+                                            class="btn btn--outline btn--sm"
+                                            @click="copyNow()"
+                                            x-text="copied ? 'Copied' : 'Install (copy)'"></button>
+                                        <span class="variant-links">
+                                            <span>via</span>
+                                            <button type="button"
+                                                @click="variant='pipx'"
+                                                :aria-current="variant==='pipx'">pipx</button>
+                                            <span>•</span>
+                                            <button type="button"
+                                                @click="variant='pip'"
+                                                :aria-current="variant==='pip'">pip</button>
+                                            <span>•</span>
+                                            <button type="button"
+                                                @click="variant='poetry'"
+                                                :aria-current="variant==='poetry'">poetry</button>
+                                        </span>
+                                    </div>
                                     <a href="https://docs.apeworx.io/"
                                         target="_blank" rel="noreferrer"
                                         class="btn btn--outline">Read the
                                         docs</a>
                                 </div>
                             </div>
-                            <div class="feature">
+                            <div class="feature" x-data="{
+                                variant: 'pipx',
+                                copied: false,
+                                cmds: {
+                                    pipx: 'pipx install silverback',
+                                    pip: 'pip install silverback',
+                                    poetry: 'poetry add silverback'
+                                },
+                                async copyNow() {
+                                    try {
+                                        await navigator.clipboard.writeText(this.cmds[this.variant]);
+                                        this.copied = true;
+                                        setTimeout(() => this.copied = false, 1400);
+                                    } catch(e) { console.error(e); }
+                                }
+                            }">
                                 <h3>Silverback</h3>
                                 <p>Silverback lets you create and deploy your
                                     own Python bots that respond to on-chain
@@ -279,6 +331,28 @@
                                     <a href="/silverback"
                                         class="btn btn--primary">Get started
                                         with Silverback</a>
+                                    <div class="install-group">
+                                        <span class="code-chip"
+                                            x-text="cmds[variant]"></span>
+                                        <button type="button"
+                                            class="btn btn--outline btn--sm"
+                                            @click="copyNow()"
+                                            x-text="copied ? 'Copied' : 'Install (copy)'"></button>
+                                        <span class="variant-links">
+                                            <span>via</span>
+                                            <button type="button"
+                                                @click="variant='pipx'"
+                                                :aria-current="variant==='pipx'">pipx</button>
+                                            <span>•</span>
+                                            <button type="button"
+                                                @click="variant='pip'"
+                                                :aria-current="variant==='pip'">pip</button>
+                                            <span>•</span>
+                                            <button type="button"
+                                                @click="variant='poetry'"
+                                                :aria-current="variant==='poetry'">poetry</button>
+                                        </span>
+                                    </div>
                                     <a href="https://github.com/ApeWorX"
                                         target="_blank" rel="noreferrer"
                                         class="btn btn--outline">View on
