@@ -1,4 +1,4 @@
-Write-Host "ApeWorx installer: Silverback"
+Write-Host "ApeWorX installer: Silverback"
 if (-not (Get-Command pipx -ErrorAction SilentlyContinue)) {
   Write-Host "Error: pipx is not installed."
   Write-Host "Install pipx first, then re-run this script."

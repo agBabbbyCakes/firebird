@@ -1,4 +1,4 @@
-Write-Host "ApeWorx installer: Ape Framework"
+Write-Host "ApeWorX installer: Ape Framework"
 if (-not (Get-Command pipx -ErrorAction SilentlyContinue)) {
   Write-Host "Error: pipx is not installed."
   Write-Host "Install pipx first, then re-run this script."

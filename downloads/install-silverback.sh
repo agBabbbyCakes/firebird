@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "ApeWorx installer: Silverback"
+echo "ApeWorX installer: Silverback"
 if ! command -v pipx >/dev/null 2>&1; then
   echo "Error: pipx is not installed."
   echo "Install pipx first, then re-run this script."

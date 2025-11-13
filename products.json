@@ -3,6 +3,6 @@
   {"name": "Silverback", "slug": "silverback", "status": "active", "description": "Silverback is a way to create Python bots to act and react to on-chain events."},
   {"name": "ChaosNet", "slug": "chaosnet", "status": "in-dev", "description": "Experiment with multi-chain test networks."},
   {"name": "ApePay", "slug": "apepay", "status": "coming-soon", "description": "Simple on-chain payments API."},
-  {"name": "Multisig Wallet", "slug": "wallet", "status": "active", "description": "Secure multi-signature wallet built by ApeWorx."}
+  {"name": "Multisig Wallet", "slug": "wallet", "status": "active", "description": "Secure multi-signature wallet built by ApeWorX."}
 ]
 

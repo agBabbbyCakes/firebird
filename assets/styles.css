@@ -30,6 +30,13 @@
     --color-accent: #22d3ee;
     --ring-white: rgba(255, 255, 255, 0.6);
     --ring-white-soft: rgba(255, 255, 255, 0.3);
+    /* Buttons */
+    --btn-gap: 0.5rem;
+    --btn-padding-y: 0.75rem;
+    --btn-padding-x: 1.25rem;
+    --btn-radius: 0.5rem;
+    --btn-font-size: 0.875rem;
+    --btn-stroke-width: 1.75;
 }
 
 /* Layout */
@@ -74,13 +81,19 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
+    gap: var(--btn-gap);
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    border-radius: var(--btn-radius);
+    font-size: var(--btn-font-size);
     font-weight: 500;
     text-decoration: none;
     transition: box-shadow .2s, background-color .2s, border-color .2s, filter .2s;
+}
+
+.btn .icon {
+    width: 16px;
+    height: 16px;
+    stroke-width: var(--btn-stroke-width);
 }
 
 .btn:focus-visible {
@@ -88,6 +101,7 @@
     box-shadow: 0 0 0 2px var(--ring-white);
 }
 
+.btn.primary,
 .btn--primary {
     color: #ffffff;
     background-color: rgba(255, 255, 255, 0.08);
@@ -95,20 +109,36 @@
     box-shadow: none;
 }
 
+.btn.primary:hover,
 .btn--primary:hover {
     background-color: rgba(255, 255, 255, 0.12);
     border-color: rgba(34, 211, 238, 0.65);
 }
 
+.btn.secondary,
 .btn--outline {
     color: #ffffff;
     background-color: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(34, 211, 238, 0.5);
 }
 
+.btn.secondary:hover,
 .btn--outline:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: rgba(34, 211, 238, 0.65);
+}
+
+/* Ghost button (minimal) */
+.btn.ghost {
+    color: #cbd5e1;
+    background-color: transparent;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.btn.ghost:hover {
+    color: #ffffff;
+    border-color: rgba(148, 163, 184, 0.4);
+    background-color: rgba(255, 255, 255, 0.04);
 }
 
 /* Small button */
@@ -116,6 +146,11 @@
     padding: 0.5rem 0.75rem;
     font-size: 0.8125rem;
     border-radius: 0.4rem;
+}
+
+/* Equal-width buttons inside flex rows */
+.btn--equal {
+    flex: 1 1 0%;
 }
 
 /* Chips (Ape Stack) */
