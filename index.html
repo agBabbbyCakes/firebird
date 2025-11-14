@@ -25,31 +25,16 @@
             content="ApeWorX builds open-source Python tools for smart contract engineers and data scientists." />
         <meta name="twitter:image" content="/assets/ape-og.png" />
         <meta name="color-scheme" content="dark" />
-        <script>
-      // Tailwind CDN configuration (must be defined before the script below)
-      window.tailwind = window.tailwind || {};
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              accent: '#00FFFF'
-            },
-            boxShadow: {
-              'accent-soft': '0 0 0 1px rgba(0,255,255,0.25), 0 0 24px rgba(0,255,255,0.18)',
-              'accent-strong': '0 0 0 1px rgba(0,255,255,0.35), 0 0 48px rgba(0,255,255,0.3)'
-            },
-            backgroundImage: {
-              'app-gradient': 'linear-gradient(to bottom, rgb(10 10 10), rgb(0 0 0))'
-            }
-          }
-        }
-      };
-    </script>
-        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+        <link rel="preconnect" href="https://unpkg.com" crossorigin>
+        <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+        <link rel="dns-prefetch" href="https://unpkg.com">
         <link rel="stylesheet" href="/assets/styles.css" />
-        <script defer
-            src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script src="/assets/tailwind-config.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="/assets/performance.js" defer></script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="/assets/alpine-helpers.js"></script>
     </head>
     <body
         class="h-full bg-black text-neutral-200 selection:bg-cyan-400/20 selection:text-cyan-100">
@@ -57,7 +42,7 @@
             <div class="grid-overlay"></div>
 
             <!-- Top navigation (minimal) -->
-            <header class="relative" x-data="{ mobileOpen: false }">
+            <header class="relative sticky top-0 z-50" x-data="{ mobileOpen: false }">
                 <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8">
                     <div class="flex items-center justify-between">
                         <a href="/" class="inline-flex items-center gap-2">
@@ -171,9 +156,10 @@
 
                             <div
                                 x-data="{ show: false }"
-                                x-init="setTimeout(() => show = true, 40)"
+                                x-init="requestAnimationFrame(() => { setTimeout(() => show = true, 40) })"
                                 :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'"
-                                class="transition-all duration-700 will-change-transform">
+                                class="transition-all duration-700 will-change-transform"
+                                style="transform: translateZ(0);">
                                 <div
                                     class="mb-5 flex items-center justify-center">
                                     <span
@@ -219,7 +205,7 @@
                                             class="h-4 w-4" viewBox="0 0 20 20"
                                             fill="currentColor">
                                             <path fill-rule="evenodd"
-                                                d="M12.293 2.293a1 1 0 011.414 0l4 4a.997.997 0 010 1.414l-9 9A1 1 0 017.707 17H4a1 1 0 01-1-1v-3.707a1 1 0 01.293-.707l9-9zM5 13v2h2l8-8-2-2-8 8z"
+                                                d="M10.293 3.293a1 1 0 011.414 0l5 5a.997.997 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z"
                                                 clip-rule="evenodd" />
                                         </svg>
                                     </a>
@@ -234,7 +220,7 @@
                     class="h-10 bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
 
                 <!-- Product Spotlights -->
-                <section id="spotlights" class="section section--alt-2">
+                <section id="spotlights" class="section section--alt-2" data-lazy-load>
                     <div class="container">
                         <div class="mb-6 sm:mb-8">
                             <h2
@@ -261,7 +247,7 @@
                                         <span>Get started with Ape</span>
                                     </a>
                                     <a href="/downloads/install-ape.sh" download
-                                        class="btn btn--outline btn--sm secondary">
+                                        class="btn btn--outline secondary">
                                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                             <polyline points="7 10 12 15 17 10"></polyline>
@@ -271,7 +257,7 @@
                                     </a>
                                     <a href="/downloads/install-ape.ps1"
                                         download
-                                        class="btn btn--outline btn--sm secondary">
+                                        class="btn btn--outline secondary">
                                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                             <polyline points="7 10 12 15 17 10"></polyline>
@@ -301,7 +287,7 @@
                                     </a>
                                     <a href="/downloads/install-silverback.sh"
                                         download
-                                        class="btn btn--outline btn--sm secondary">
+                                        class="btn btn--outline secondary">
                                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                             <polyline points="7 10 12 15 17 10"></polyline>
@@ -311,7 +297,7 @@
                                     </a>
                                     <a href="/downloads/install-silverback.ps1"
                                         download
-                                        class="btn btn--outline btn--sm secondary">
+                                        class="btn btn--outline secondary">
                                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                             <polyline points="7 10 12 15 17 10"></polyline>
@@ -335,7 +321,7 @@
 
                 <!-- Ecosystem Grid -->
                 <section id="ecosystem"
-                    class="relative py-12 sm:py-16 bg-[#0d0f11]">
+                    class="relative py-12 sm:py-16 bg-[#0d0f11]" data-lazy-load>
                     <div class="mx-auto max-w-7xl px-6 sm:px-8">
                         <div class="mb-8 sm:mb-10">
                             <h2
@@ -348,7 +334,7 @@
                             </p>
                         </div>
 
-                        <div x-data="ecosystem()" x-init="load()">
+                        <div x-data="ecosystem()" x-init="load()" x-cloak data-lazy-load>
                             <div class="card-grid">
                                 <template x-for="p in products" :key="p.slug">
                                     <a
@@ -402,7 +388,7 @@
 
                 <!-- Community & Testimonials -->
                 <section id="community"
-                    class="relative py-12 sm:py-16 bg-[#0d0f11]">
+                    class="relative py-12 sm:py-16 bg-[#0d0f11]" data-lazy-load>
                     <div class="mx-auto max-w-7xl px-6 sm:px-8">
                         <div class="mb-8 sm:mb-10">
                             <h2
@@ -491,7 +477,7 @@
 
                 <!-- Next Steps CTA -->
                 <section id="next-steps"
-                    class="relative py-16 sm:py-20 bg-[#141619]">
+                    class="relative py-16 sm:py-20 bg-[#141619]" data-lazy-load>
                     <div class="mx-auto max-w-7xl px-6 sm:px-8">
                         <div
                             class="relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-8 text-center">
@@ -532,46 +518,5 @@
             </footer>
         </div>
 
-        <!-- Alpine helpers -->
-        <script>
-      function ecosystem() {
-        return {
-          products: [],
-          async load() {
-            try {
-              const res = await fetch('products.json', { cache: 'no-cache' });
-              if (!res.ok) throw new Error('Failed to load products.json');
-              this.products = await res.json();
-            } catch (e) {
-              console.error(e);
-              this.products = [];
-            }
-          },
-          statusText(status) {
-            if (status === 'active') return 'Active';
-            if (status === 'in-dev') return 'In Development';
-            if (status === 'coming-soon') return 'Coming Soon';
-            return status;
-          },
-          firstSentence(text) {
-            if (!text) return '';
-            const m = String(text).match(/(.+?[.!?])(\s|$)/);
-            return m ? m[1] : text;
-          },
-          
-        };
-      }
-      function stack() {
-        return {
-          ordered: [
-            { name: 'Ape Framework', slug: 'framework' },
-            { name: 'Silverback', slug: 'silverback' },
-            { name: 'ChaosNet', slug: 'chaosnet' },
-            { name: 'ApePay', slug: 'apepay' },
-            { name: 'Academy', slug: 'academy' }
-          ]
-        };
-      }
-    </script>
     </body>
 </html>
