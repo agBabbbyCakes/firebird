@@ -299,6 +299,7 @@ img.loaded {
 .btn--equal {
     flex: 1 1 0%;
     width: var(--btn-min-width);
+    min-height: 2.75rem; /* Ensure equal height */
 }
 
 /* Chips (Ape Stack) */
