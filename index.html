@@ -233,10 +233,6 @@
                     </div>
                 </section>
 
-                <!-- Divider -->
-                <div
-                    class="h-10 bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
-
                 <!-- Product Spotlights -->
                 <section id="spotlights" class="section section--alt-2"
                     data-lazy-load>
@@ -324,74 +320,6 @@
                         </div>
                     </div>
                 </section>
-
-                <!-- Ecosystem Grid -->
-                <section id="ecosystem"
-                    class="relative py-12 sm:py-16 bg-[#0d0f11]" data-lazy-load>
-                    <div class="mx-auto max-w-7xl px-6 sm:px-8">
-                        <div class="mb-8 sm:mb-10">
-                            <h2
-                                class="text-center text-2xl font-semibold tracking-tight text-neutral-100 sm:text-3xl">
-                                ApeWorX's Ecosystem
-                            </h2>
-                            <p
-                                class="mt-2 text-center text-sm text-neutral-400 sm:text-base">
-                                Explore live tools and what we're building next.
-                            </p>
-                        </div>
-
-                        <div x-data="ecosystem()" x-init="load()" x-cloak
-                            data-lazy-load>
-                            <div class="card-grid">
-                                <template x-for="p in products" :key="p.slug">
-                                    <a
-                                        :href="'/' + p.slug"
-                                        class="card"
-                                        :data-status="p.status">
-                                        <!-- Status badge top-right -->
-                                        <div
-                                            class="pointer-events-none absolute right-3 top-3 z-10">
-                                            <span class="pill"
-                                                x-text="statusText(p.status)"></span>
-                                        </div>
-
-                                        <div class="flex items-start gap-4">
-                                            <!-- Placeholder Logo -->
-                                            <div
-                                                class="relative h-12 w-12 shrink-0 overflow-hidden rounded-md border border-white/10 bg-gradient-to-br from-cyan-400/20 to-transparent">
-                                                <div
-                                                    class="absolute inset-0 flex items-center justify-center">
-                                                    <span
-                                                        class="text-xs font-semibold text-cyan-300"
-                                                        x-text="p.name.split(' ').map(s => s[0]).slice(0,2).join('')"></span>
-                                                </div>
-                                            </div>
-
-                                            <div class="min-w-0">
-                                                <h3
-                                                    class="truncate text-base font-semibold text-neutral-100"
-                                                    x-text="p.name"></h3>
-                                                <p
-                                                    class="mt-1 line-clamp-2 text-sm text-neutral-400"
-                                                    x-text="firstSentence(p.description)"></p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </template>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Divider -->
-                <div
-                    class="h-10 bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
-
-                <!-- Ape Stack removed per feedback -->
-
-                <!-- Divider -->
-                <div
-                    class="h-10 bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
 
                 <!-- Community & Testimonials -->
                 <section id="community"
@@ -483,10 +411,6 @@
                         </div>
                     </div>
                 </section>
-
-                <!-- Divider -->
-                <div
-                    class="h-10 bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
 
                 <!-- Next Steps CTA -->
                 <section id="next-steps"
