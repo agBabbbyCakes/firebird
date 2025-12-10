@@ -4,42 +4,65 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Silverback — Python bots that respond to on-chain events</title>
-        <meta name="description" content="Silverback lets you create and deploy Python bots that respond to on-chain events using the Ape ecosystem." />
+        <meta name="description"
+            content="Silverback lets you create and deploy Python bots that respond to on-chain events using the Ape ecosystem." />
         <meta name="theme-color" content="#000000" />
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="/assets/styles.css" />
-        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer
+            src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body class="h-full bg-black text-neutral-200">
-        <div class="relative min-h-screen bg-app-gradient" x-data="{ mobileOpen: false }">
+        <div class="relative min-h-screen bg-app-gradient"
+            x-data="{ mobileOpen: false }">
             <div class="grid-overlay"></div>
 
             <header class="relative">
                 <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8">
                     <div class="flex items-center justify-between">
                         <a href="/" class="inline-flex items-center gap-2">
-                            <img src="/assets/logo.png" alt="ApeWorX Logo" class="h-6 w-6 object-contain" style="filter: brightness(0) invert(1);" />
-                            <span class="font-semibold tracking-tight text-neutral-100">ApeWorX</span>
+                            <img src="/assets/logo.png" alt="ApeWorX Logo"
+                                class="h-6 w-6 object-contain"
+                                style="filter: brightness(0) invert(1);" />
+                            <span
+                                class="font-semibold tracking-tight text-neutral-100">ApeWorX</span>
                         </a>
-                        <nav class="hidden gap-6 text-sm text-neutral-300 sm:flex">
-                            <a href="/framework" class="hover:text-white">Ape Framework</a>
-                            <a href="/silverback" class="hover:text-white">Silverback</a>
+                        <nav
+                            class="hidden gap-6 text-sm text-neutral-300 sm:flex">
+                            <a href="/framework" class="hover:text-white">Ape
+                                Framework</a>
+                            <a href="/silverback"
+                                class="hover:text-white">Silverback</a>
+                            <a href="/features"
+                                class="hover:text-white">Features</a>
                             <a href="/about" class="hover:text-white">About</a>
-                            <a href="https://github.com/ApeWorX" target="_blank" rel="noreferrer" aria-label="GitHub" class="hover:text-white">
-                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                            <a href="https://github.com/ApeWorX" target="_blank"
+                                rel="noreferrer" aria-label="GitHub"
+                                class="hover:text-white">
+                                <svg class="h-5 w-5" fill="currentColor"
+                                    viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
                                 </svg>
                             </a>
                         </nav>
-                        <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-neutral-300 hover:text-white hover:bg-white/10 sm:hidden" @click="mobileOpen = true" aria-label="Open menu">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M3.75 5.25A.75.75 0 014.5 4.5h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm0 7.5a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm.75 6.75a.75.75 0 000 1.5h15a.75.75 0 000-1.5h-15z" clip-rule="evenodd"/></svg>
+                        <button type="button"
+                            class="inline-flex items-center justify-center rounded-md p-2 text-neutral-300 hover:text-white hover:bg-white/10 sm:hidden"
+                            @click="mobileOpen = true" aria-label="Open menu">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6" viewBox="0 0 24 24"
+                                fill="currentColor"><path fill-rule="evenodd"
+                                    d="M3.75 5.25A.75.75 0 014.5 4.5h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm0 7.5a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm.75 6.75a.75.75 0 000 1.5h15a.75.75 0 000-1.5h-15z"
+                                    clip-rule="evenodd" /></svg>
                         </button>
                     </div>
                 </div>
             </header>
             <!-- Mobile menu overlay -->
-            <div class="fixed inset-0 z-50 sm:hidden" x-show="mobileOpen" x-transition.opacity style="display: none;">
-                <div class="absolute inset-0 bg-black/70 backdrop-blur-md" @click="mobileOpen = false"></div>
+            <div class="fixed inset-0 z-50 sm:hidden" x-show="mobileOpen"
+                x-transition.opacity style="display: none;">
+                <div class="absolute inset-0 bg-black/70 backdrop-blur-md"
+                    @click="mobileOpen = false"></div>
                 <div
                     class="absolute right-0 top-0 h-full w-72 max-w-[85vw] bg-[#0d0f11] shadow-xl ring-1 ring-white/10"
                     x-transition:enter="transition transform duration-200"
@@ -50,31 +73,56 @@
                     x-transition:leave-end="translate-x-full"
                     @click.outside="mobileOpen = false">
                     <div class="flex items-center justify-between px-4 py-4">
-                        <span class="text-sm font-semibold text-neutral-200">Menu</span>
+                        <span
+                            class="text-sm font-semibold text-neutral-200">Menu</span>
                         <button
                             class="rounded-md p-2 text-neutral-300 hover:text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
                             @click="mobileOpen = false"
                             aria-label="Close menu">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-                                <path fill-rule="evenodd" d="M6.225 4.811a.75.75 0 011.06 0L12 9.525l4.715-4.714a.75.75 0 111.06 1.06L13.06 10.586l4.715 4.714a.75.75 0 11-1.06 1.061L12 11.646l-4.715 4.715a.75.75 0 11-1.06-1.06L10.94 10.586 6.225 5.87a.75.75 0 010-1.06z" clip-rule="evenodd" />
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M6.225 4.811a.75.75 0 011.06 0L12 9.525l4.715-4.714a.75.75 0 111.06 1.06L13.06 10.586l4.715 4.714a.75.75 0 11-1.06 1.061L12 11.646l-4.715 4.715a.75.75 0 11-1.06-1.06L10.94 10.586 6.225 5.87a.75.75 0 010-1.06z"
+                                    clip-rule="evenodd" />
                             </svg>
                         </button>
                     </div>
                     <nav class="px-4 pb-6">
-                        <a href="/#community" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Community</a>
-                        <a href="/#ecosystem" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ecosystem</a>
-                        <a href="/" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Home</a>
-                        <a href="/#next-steps" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Next Steps</a>
-                        <a href="/#spotlights" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Spotlights</a>
+                        <a href="/#community" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Community</a>
+                        <a href="/#ecosystem" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ecosystem</a>
+                        <a href="/" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Home</a>
+                        <a href="/#next-steps" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Next
+                            Steps</a>
+                        <a href="/#spotlights" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Spotlights</a>
                         <div class="my-3 h-px bg-white/10"></div>
-                        <a href="/framework" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ape Framework</a>
-                        <a href="/silverback" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Silverback</a>
-                        <a href="/about" @click="mobileOpen=false" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">About</a>
-                        <a href="https://discord.gg/apeworx" target="_blank" rel="noreferrer" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Discord</a>
-                        <a href="https://docs.apeworx.io/" target="_blank" rel="noreferrer" class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Docs</a>
-                        <a href="https://github.com/ApeWorX" target="_blank" rel="noreferrer" aria-label="GitHub" class="flex items-center gap-3 rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">
-                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                        <a href="/framework" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ape
+                            Framework</a>
+                        <a href="/silverback" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Silverback</a>
+                        <a href="/features" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Features</a>
+                        <a href="/about" @click="mobileOpen=false"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">About</a>
+                        <a href="https://discord.gg/apeworx" target="_blank"
+                            rel="noreferrer"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Discord</a>
+                        <a href="https://docs.apeworx.io/" target="_blank"
+                            rel="noreferrer"
+                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Docs</a>
+                        <a href="https://github.com/ApeWorX" target="_blank"
+                            rel="noreferrer" aria-label="GitHub"
+                            class="flex items-center gap-3 rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">
+                            <svg class="h-5 w-5" fill="currentColor"
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
                             </svg>
                         </a>
                     </nav>
@@ -85,21 +133,38 @@
                 <section class="relative pt-20 pb-16 sm:pt-28 sm:pb-24">
                     <div class="mx-auto max-w-7xl px-6 sm:px-8">
                         <div class="relative mx-auto max-w-3xl text-center">
-                            <div class="pointer-events-none absolute -top-24 left-1/2 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl"></div>
-                            <h1 class="text-4xl font-semibold tracking-tight text-neutral-100 sm:text-6xl">
+                            <div
+                                class="pointer-events-none absolute -top-24 left-1/2 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl"></div>
+                            <h1
+                                class="text-4xl font-semibold tracking-tight text-neutral-100 sm:text-6xl">
                                 Silverback
                             </h1>
-                            <p class="mx-auto mt-5 max-w-2xl text-base text-neutral-400 sm:text-lg">
-                                Silverback is a way to create Python bots to act and react to on-chain events.
+                            <p
+                                class="mx-auto mt-5 max-w-2xl text-base text-neutral-400 sm:text-lg">
+                                Silverback is a way to create Python bots to act
+                                and react to on-chain events.
                             </p>
-                            <div class="mx-auto mt-8 flex max-w-2xl flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-                                <a href="https://github.com/ApeWorX" target="_blank" rel="noreferrer" class="btn btn--primary primary">
-                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.2-.4-3.9 1.5a13.4 13.4 0 0 0-7 0C5 1.2 3.8 1.6 3.8 1.6a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 2.4 9c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"></path>
+                            <div
+                                class="mx-auto mt-8 flex max-w-2xl flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+                                <a href="https://github.com/ApeWorX"
+                                    target="_blank" rel="noreferrer"
+                                    class="btn btn--primary primary">
+                                    <svg class="icon"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16"
+                                        viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.75"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.2-.4-3.9 1.5a13.4 13.4 0 0 0-7 0C5 1.2 3.8 1.6 3.8 1.6a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 2.4 9c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"></path>
                                     </svg>
                                     <span>View on GitHub</span>
                                 </a>
-                                <a href="/" class="btn btn--outline secondary"><span>Back to Home</span></a>
+                                <a href="/"
+                                    class="btn btn--outline secondary"><span>Back
+                                        to Home</span></a>
                             </div>
                         </div>
                     </div>
@@ -109,36 +174,50 @@
             <footer
                 class="relative border-t border-white/5 bg-[#0d0f11] py-12 sm:py-16">
                 <div class="mx-auto max-w-7xl px-6 sm:px-8">
-                    <div class="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:grid-cols-6 mb-8">
+                    <div
+                        class="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:grid-cols-6 mb-8">
                         <!-- Company -->
                         <div class="col-span-2 sm:col-span-1">
                             <div class="flex items-center gap-2 mb-4">
-                                <img src="/assets/logo.png" alt="ApeWorX Logo" class="h-6 w-6 object-contain" style="filter: brightness(0) invert(1);" />
-                                <span class="font-semibold text-neutral-100">ApeWorX</span>
+                                <img src="/assets/logo.png" alt="ApeWorX Logo"
+                                    class="h-6 w-6 object-contain"
+                                    style="filter: brightness(0) invert(1);" />
+                                <span
+                                    class="font-semibold text-neutral-100">ApeWorX</span>
                             </div>
                             <p class="text-xs text-neutral-400 mb-4">
-                                Open-source Python tools for smart contract engineers and data scientists.
+                                Open-source Python tools for smart contract
+                                engineers and data scientists.
                             </p>
                             <div class="flex gap-3">
-                                <a href="https://github.com/ApeWorX" target="_blank" rel="noreferrer" 
-                                   class="text-neutral-400 hover:text-white transition-colors"
-                                   aria-label="GitHub">
-                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                                <a href="https://github.com/ApeWorX"
+                                    target="_blank" rel="noreferrer"
+                                    class="text-neutral-400 hover:text-white transition-colors"
+                                    aria-label="GitHub">
+                                    <svg class="h-5 w-5" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
                                     </svg>
                                 </a>
-                                <a href="https://discord.gg/apeworx" target="_blank" rel="noreferrer"
-                                   class="text-neutral-400 hover:text-white transition-colors"
-                                   aria-label="Discord">
-                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928-1.793 6.4-2.246 6.4-2.246s.272-1.313.272-2.648c0-1.336-.272-2.648-.272-2.648s-2.472-.453-6.4-2.246a.077.077 0 0 1-.078.01.076.076 0 0 1-.371-.292 10.2 10.2 0 0 0-.008-.128.077.077 0 0 1 .008-.128 13.107 13.107 0 0 1 1.872-.892.076.076 0 0 0 .041-.106c-.352-.699-.764-1.363-1.226-1.994a.077.077 0 0 0-.084-.028 19.9 19.9 0 0 0-5.993-3.03.077.077 0 0 0-.031-.057C-.32 13.58.533 9.046 3.645 4.397a.061.061 0 0 0 .032-.027zm-5.02 11.62c-1.182 0-2.156-1.085-2.156-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.156 2.42 0 1.333-.956 2.418-2.156 2.418zm5.385 0c-1.182 0-2.156-1.085-2.156-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.156 2.42 0 1.333-.946 2.418-2.156 2.418z"/>
+                                <a href="https://discord.gg/apeworx"
+                                    target="_blank" rel="noreferrer"
+                                    class="text-neutral-400 hover:text-white transition-colors"
+                                    aria-label="Discord">
+                                    <svg class="h-5 w-5" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928-1.793 6.4-2.246 6.4-2.246s.272-1.313.272-2.648c0-1.336-.272-2.648-.272-2.648s-2.472-.453-6.4-2.246a.077.077 0 0 1-.078.01.076.076 0 0 1-.371-.292 10.2 10.2 0 0 0-.008-.128.077.077 0 0 1 .008-.128 13.107 13.107 0 0 1 1.872-.892.076.076 0 0 0 .041-.106c-.352-.699-.764-1.363-1.226-1.994a.077.077 0 0 0-.084-.028 19.9 19.9 0 0 0-5.993-3.03.077.077 0 0 0-.031-.057C-.32 13.58.533 9.046 3.645 4.397a.061.061 0 0 0 .032-.027zm-5.02 11.62c-1.182 0-2.156-1.085-2.156-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.156 2.42 0 1.333-.956 2.418-2.156 2.418zm5.385 0c-1.182 0-2.156-1.085-2.156-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.156 2.42 0 1.333-.946 2.418-2.156 2.418z" />
                                     </svg>
                                 </a>
-                                <a href="https://twitter.com/ApeWorX" target="_blank" rel="noreferrer"
-                                   class="text-neutral-400 hover:text-white transition-colors"
-                                   aria-label="Twitter">
-                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                <a href="https://twitter.com/ApeWorX"
+                                    target="_blank" rel="noreferrer"
+                                    class="text-neutral-400 hover:text-white transition-colors"
+                                    aria-label="Twitter">
+                                    <svg class="h-5 w-5" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                     </svg>
                                 </a>
                             </div>
@@ -146,59 +225,91 @@
 
                         <!-- Products -->
                         <div>
-                            <h4 class="text-sm font-semibold text-neutral-100 mb-4">Products</h4>
+                            <h4
+                                class="text-sm font-semibold text-neutral-100 mb-4">Products</h4>
                             <ul class="space-y-3">
-                                <li><a href="/framework" class="text-xs text-neutral-400 hover:text-white transition-colors">Ape Framework</a></li>
-                                <li><a href="/silverback" class="text-xs text-neutral-400 hover:text-white transition-colors">Silverback</a></li>
-                                <li><a href="/#ecosystem" class="text-xs text-neutral-400 hover:text-white transition-colors">Ecosystem</a></li>
+                                <li><a href="/framework"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Ape
+                                        Framework</a></li>
+                                <li><a href="/silverback"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Silverback</a></li>
+                                <li><a href="/#ecosystem"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Ecosystem</a></li>
                             </ul>
                         </div>
 
                         <!-- Resources -->
                         <div>
-                            <h4 class="text-sm font-semibold text-neutral-100 mb-4">Resources</h4>
+                            <h4
+                                class="text-sm font-semibold text-neutral-100 mb-4">Resources</h4>
                             <ul class="space-y-3">
-                                <li><a href="https://docs.apeworx.io/" target="_blank" rel="noreferrer" class="text-xs text-neutral-400 hover:text-white transition-colors">Documentation</a></li>
-                                <li><a href="https://github.com/ApeWorX" target="_blank" rel="noreferrer" class="text-xs text-neutral-400 hover:text-white transition-colors">GitHub</a></li>
-                                <li><a href="https://discord.gg/apeworx" target="_blank" rel="noreferrer" class="text-xs text-neutral-400 hover:text-white transition-colors">Discord</a></li>
+                                <li><a href="https://docs.apeworx.io/"
+                                        target="_blank" rel="noreferrer"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Documentation</a></li>
+                                <li><a href="https://github.com/ApeWorX"
+                                        target="_blank" rel="noreferrer"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">GitHub</a></li>
+                                <li><a href="https://discord.gg/apeworx"
+                                        target="_blank" rel="noreferrer"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Discord</a></li>
                             </ul>
                         </div>
 
                         <!-- Community -->
                         <div>
-                            <h4 class="text-sm font-semibold text-neutral-100 mb-4">Community</h4>
+                            <h4
+                                class="text-sm font-semibold text-neutral-100 mb-4">Community</h4>
                             <ul class="space-y-3">
-                                <li><a href="https://discord.gg/apeworx" target="_blank" rel="noreferrer" class="text-xs text-neutral-400 hover:text-white transition-colors">Discord</a></li>
-                                <li><a href="https://github.com/ApeWorX" target="_blank" rel="noreferrer" class="text-xs text-neutral-400 hover:text-white transition-colors">Contribute</a></li>
-                                <li><a href="/#community" class="text-xs text-neutral-400 hover:text-white transition-colors">Testimonials</a></li>
+                                <li><a href="https://discord.gg/apeworx"
+                                        target="_blank" rel="noreferrer"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Discord</a></li>
+                                <li><a href="https://github.com/ApeWorX"
+                                        target="_blank" rel="noreferrer"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Contribute</a></li>
+                                <li><a href="/#community"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Testimonials</a></li>
                             </ul>
                         </div>
 
                         <!-- Company -->
                         <div>
-                            <h4 class="text-sm font-semibold text-neutral-100 mb-4">Company</h4>
+                            <h4
+                                class="text-sm font-semibold text-neutral-100 mb-4">Company</h4>
                             <ul class="space-y-3">
-                                <li><a href="/about" class="text-xs text-neutral-400 hover:text-white transition-colors">About</a></li>
-                                <li><a href="/#spotlights" class="text-xs text-neutral-400 hover:text-white transition-colors">Features</a></li>
-                                <li><a href="/#next-steps" class="text-xs text-neutral-400 hover:text-white transition-colors">Get Started</a></li>
+                                <li><a href="/about"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">About</a></li>
+                                <li><a href="/features"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Features</a></li>
+                                <li><a href="/#next-steps"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Get
+                                        Started</a></li>
                             </ul>
                         </div>
 
                         <!-- Legal -->
                         <div>
-                            <h4 class="text-sm font-semibold text-neutral-100 mb-4">Legal</h4>
+                            <h4
+                                class="text-sm font-semibold text-neutral-100 mb-4">Legal</h4>
                             <ul class="space-y-3">
-                                <li><a href="#" class="text-xs text-neutral-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                                <li><a href="#" class="text-xs text-neutral-400 hover:text-white transition-colors">Terms of Service</a></li>
-                                <li><a href="#" class="text-xs text-neutral-400 hover:text-white transition-colors">License</a></li>
+                                <li><a href="#"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Privacy
+                                        Policy</a></li>
+                                <li><a href="#"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Terms
+                                        of Service</a></li>
+                                <li><a href="#"
+                                        class="text-xs text-neutral-400 hover:text-white transition-colors">License</a></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="pt-8 border-t border-white/5">
-                        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div
+                            class="flex flex-col sm:flex-row justify-between items-center gap-4">
                             <p class="text-xs text-neutral-500">
-                                &copy; <span x-data x-text="new Date().getFullYear()"></span> ApeWorX LTD. All rights reserved.
+                                &copy; <span x-data
+                                    x-text="new Date().getFullYear()"></span>
+                                ApeWorX LTD. All rights reserved.
                             </p>
                             <p class="text-xs text-neutral-500">
                                 Open-source and community-driven.
@@ -210,4 +321,3 @@
         </div>
     </body>
 </html>
-
