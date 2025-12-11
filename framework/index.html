@@ -9,6 +9,7 @@
         <meta name="theme-color" content="#000000" />
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="/assets/styles.css" />
+        <link rel="stylesheet" href="/assets/ape-styles.css" />
         <script defer
             src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
@@ -17,48 +18,45 @@
             x-data="{ mobileOpen: false }">
             <div class="grid-overlay"></div>
 
-            <header class="relative">
-                <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8">
-                    <div class="flex items-center justify-between">
-                        <a href="/" class="inline-flex items-center gap-2">
-                            <img src="/assets/logo.png" alt="ApeWorX Logo"
-                                class="h-6 w-6 object-contain"
-                                style="filter: brightness(0) invert(1);" />
-                            <span
-                                class="font-semibold tracking-tight text-neutral-100">ApeWorX</span>
-                        </a>
-                        <nav
-                            class="hidden gap-6 text-sm text-neutral-300 sm:flex">
-                            <a href="/framework"
-                                class="hover:text-white font-medium text-white">Ape
-                                Framework</a>
-                            <a href="/silverback"
-                                class="hover:text-white">Silverback</a>
-                            <a href="/features"
-                                class="hover:text-white">Features</a>
-                            <a href="/about" class="hover:text-white">About</a>
+            <header>
+                <nav>
+                    <a href="/" class="inline-flex items-center gap-2">
+                        <img src="/assets/logo.png" alt="ApeWorX Logo"
+                            class="h-6 w-6 object-contain"
+                            style="filter: brightness(0) invert(1);" />
+                        <span
+                            class="font-semibold tracking-tight text-neutral-100">ApeWorX</span>
+                    </a>
+                    <ul class="hidden sm:flex">
+                        <li><a href="/framework"
+                                class="text-white font-medium">Ape
+                                Framework</a></li>
+                        <li><a href="/silverback">Silverback</a></li>
+                        <li><a href="/features">Features</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li>
                             <a href="https://github.com/ApeWorX" target="_blank"
-                                rel="noreferrer" aria-label="GitHub"
-                                class="hover:text-white">
+                                rel="noreferrer" aria-label="GitHub">
                                 <svg class="h-5 w-5" fill="currentColor"
                                     viewBox="0 0 24 24" aria-hidden="true">
                                     <path
                                         d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
                                 </svg>
                             </a>
-                        </nav>
-                        <button type="button"
-                            class="inline-flex items-center justify-center rounded-md p-2 text-neutral-300 hover:text-white hover:bg-white/10 sm:hidden"
-                            @click="mobileOpen = true" aria-label="Open menu">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="h-6 w-6" viewBox="0 0 24 24"
-                                fill="currentColor"><path fill-rule="evenodd"
-                                    d="M3.75 5.25A.75.75 0 014.5 4.5h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm0 7.5a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm.75 6.75a.75.75 0 000 1.5h15a.75.75 0 000-1.5h-15z"
-                                    clip-rule="evenodd" /></svg>
-                        </button>
-                    </div>
-                </div>
+                        </li>
+                    </ul>
+                    <button type="button"
+                        class="sm:hidden"
+                        @click="mobileOpen = true" aria-label="Open menu">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6" viewBox="0 0 24 24"
+                            fill="currentColor"><path fill-rule="evenodd"
+                                d="M3.75 5.25A.75.75 0 014.5 4.5h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm0 7.5a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zm.75 6.75a.75.75 0 000 1.5h15a.75.75 0 000-1.5h-15z"
+                                clip-rule="evenodd" /></svg>
+                    </button>
+                </nav>
             </header>
+
             <!-- Mobile menu overlay -->
             <div class="fixed inset-0 z-50 sm:hidden" x-show="mobileOpen"
                 x-transition.opacity style="display: none;">
@@ -89,405 +87,315 @@
                             </svg>
                         </button>
                     </div>
-                    <nav class="px-4 pb-6">
+                    <nav class="px-4 pb-6 flex-col items-start gap-4">
                         <a href="/#community" @click="mobileOpen=false"
-                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Community</a>
+                            class="block w-full">Community</a>
                         <a href="/#ecosystem" @click="mobileOpen=false"
-                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ecosystem</a>
+                            class="block w-full">Ecosystem</a>
                         <a href="/" @click="mobileOpen=false"
-                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Home</a>
+                            class="block w-full">Home</a>
                         <a href="/#next-steps" @click="mobileOpen=false"
-                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Next
-                            Steps</a>
+                            class="block w-full">Next Steps</a>
                         <a href="/#spotlights" @click="mobileOpen=false"
-                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Spotlights</a>
-                        <div class="my-3 h-px bg-white/10"></div>
+                            class="block w-full">Spotlights</a>
+                        <div class="my-3 h-px bg-white/10 w-full"></div>
                         <a href="/framework" @click="mobileOpen=false"
-                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Ape
-                            Framework</a>
+                            class="block w-full">Ape Framework</a>
                         <a href="/silverback" @click="mobileOpen=false"
-                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Silverback</a>
-                        <a href="/features" @click="mobileOpen=false"
-                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Features</a>
+                            class="block w-full">Silverback</a>
                         <a href="/about" @click="mobileOpen=false"
-                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">About</a>
+                            class="block w-full">About</a>
                         <a href="https://discord.gg/apeworx" target="_blank"
-                            rel="noreferrer"
-                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Discord</a>
+                            rel="noreferrer" class="block w-full">Discord</a>
                         <a href="https://docs.apeworx.io/" target="_blank"
-                            rel="noreferrer"
-                            class="block rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">Docs</a>
+                            rel="noreferrer" class="block w-full">Docs</a>
                         <a href="https://github.com/ApeWorX" target="_blank"
-                            rel="noreferrer" aria-label="GitHub"
-                            class="flex items-center gap-3 rounded-md px-3 py-2 text-neutral-200 hover:bg-white/10">
+                            rel="noreferrer"
+                            class="flex items-center gap-3 w-full">
                             <svg class="h-5 w-5" fill="currentColor"
                                 viewBox="0 0 24 24" aria-hidden="true">
                                 <path
                                     d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
                             </svg>
+                            GitHub
                         </a>
                     </nav>
                 </div>
             </div>
 
             <main>
-                <section class="relative pt-20 pb-16 sm:pt-28 sm:pb-24">
-                    <div class="mx-auto max-w-7xl px-6 sm:px-8">
-                        <div class="relative mx-auto max-w-3xl text-center">
-                            <div
-                                class="pointer-events-none absolute -top-24 left-1/2 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl"></div>
-                            <h1
-                                class="text-4xl font-semibold tracking-tight text-neutral-100 sm:text-6xl">
-                                Ape Framework
-                            </h1>
-                            <p
-                                class="mx-auto mt-5 max-w-2xl text-base text-neutral-400 sm:text-lg">
-                                Ape Framework is an easy-to-use Web3 development
-                                tool. Users can compile, test, and interact with
-                                smart contracts all in one command line session.
-                                With our modular plugin system, Ape supports
-                                multiple contract languages and chains.
-                            </p>
-                            <div
-                                class="mx-auto mt-4 flex max-w-2xl flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-                                <a href="https://docs.apeworx.io/"
-                                    target="_blank" rel="noreferrer"
-                                    class="btn btn--primary primary"><span>Read
-                                        the Docs</span></a>
-                                <a href="/"
-                                    class="btn btn--outline secondary"><span>Back
-                                        to Home</span></a>
-                            </div>
-                        </div>
+                <section class="text-center pt-20 pb-16">
+                    <div
+                        class="pointer-events-none absolute -top-24 left-1/2 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl"></div>
+                    <hgroup>
+                        <h1>Ape Framework</h1>
+                        <p class="max-w-2xl mx-auto">
+                            Ape Framework is an easy-to-use Web3 development
+                            tool. Users can compile, test, and interact with
+                            smart contracts all in one command line session.
+                            With our modular plugin system, Ape supports
+                            multiple contract languages and chains.
+                        </p>
+                    </hgroup>
+                    <div class="flex justify-center gap-4 mt-8 flex-wrap">
+                        <a href="https://docs.apeworx.io/" target="_blank"
+                            class="btn primary">Read the Docs</a>
+                        <a href="/" class="btn secondary">Back to Home</a>
                     </div>
                 </section>
 
                 <!-- Features Section -->
                 <section class="section relative">
-                    <div class="mx-auto max-w-7xl px-6 sm:px-8">
-                        <div class="text-center mb-16">
-                            <h2
-                                class="text-3xl font-semibold tracking-tight text-neutral-100 sm:text-4xl">
-                                Features
-                            </h2>
-                            <p
-                                class="mx-auto mt-4 max-w-2xl text-base text-neutral-400 sm:text-lg">
-                                The most powerful tools for on-chain development
-                                and data science.
-                            </p>
-                        </div>
-                        <div class="card-grid">
-                            <!-- Feature 1 -->
-                            <div class="feature h-full">
-                                <h3>Unified Multi-Chain Development</h3>
-                                <p>Build, test, and deploy across local forks,
-                                    testnets, and live networks—simultaneously.
-                                    Ape’s unified command-line workflow removes
-                                    context switching so you can script, debug,
-                                    and ship to any chain without reconfiguring
-                                    your environment.</p>
-                            </div>
+                    <hgroup class="text-center mb-16">
+                        <h2>Features</h2>
+                        <p class="max-w-2xl mx-auto">
+                            The most powerful tools for on-chain development and
+                            data science.
+                        </p>
+                    </hgroup>
 
-                            <!-- Feature 2 -->
-                            <div class="feature h-full">
-                                <h3>Modular Plugin Ecosystem</h3>
-                                <p>Extend Ape into the exact toolkit your
-                                    project needs. With first-party and
-                                    community plugins—from Solidity, Vyper,
-                                    Starknet, and ENS, to QuickNode, Alchemy,
-                                    Hardhat, Foundry, and Ledger—Ape turns into
-                                    a customizable Web3 workstation.</p>
-                            </div>
+                    <div class="grid">
+                        <article>
+                            <header><h3>Unified Multi-Chain
+                                    Development</h3></header>
+                            <p>Build, test, and deploy across local forks,
+                                testnets, and live networks—simultaneously.
+                                Ape’s unified command-line workflow removes
+                                context switching so you can script, debug, and
+                                ship to any chain without reconfiguring your
+                                environment.</p>
+                        </article>
 
-                            <!-- Feature 3 -->
-                            <div class="feature h-full">
-                                <h3>End-to-End Contract Lifecycle
-                                    Automation</h3>
-                                <p>Compile, test, deploy, analyze, and verify
-                                    your smart contracts with a single
-                                    framework. Ape provides package manifest
-                                    generation, ABI tools, structured scripting,
-                                    and a rich interactive console for full
-                                    lifecycle management.</p>
-                            </div>
+                        <article>
+                            <header><h3>Modular Plugin Ecosystem</h3></header>
+                            <p>Extend Ape into the exact toolkit your project
+                                needs. With first-party and community
+                                plugins—from Solidity, Vyper, Starknet, and ENS,
+                                to QuickNode, Alchemy, Hardhat, Foundry, and
+                                Ledger—Ape turns into a customizable Web3
+                                workstation.</p>
+                        </article>
 
-                            <!-- Feature 4 -->
-                            <div class="feature h-full">
-                                <h3>Production-Grade Debugging & Tracing</h3>
-                                <p>See exactly what your contracts are doing.
-                                    Ape includes transaction tracing, gas
-                                    profiling, revert detection, and decoded
-                                    calldata output—giving developers full
-                                    visibility during both development and
-                                    live-network debugging.</p>
-                            </div>
+                        <article>
+                            <header><h3>End-to-End Contract Lifecycle
+                                    Automation</h3></header>
+                            <p>Compile, test, deploy, analyze, and verify your
+                                smart contracts with a single framework. Ape
+                                provides package manifest generation, ABI tools,
+                                structured scripting, and a rich interactive
+                                console for full lifecycle management.</p>
+                        </article>
 
-                            <!-- Feature 5 -->
-                            <div class="feature h-full">
-                                <h3>Secure Account Management</h3>
-                                <p>Protect your on-chain operations with
-                                    encrypted keyfiles, hardware-wallet support,
-                                    and flexible signing flows. ApeSigner and
-                                    AccountAPI give you enterprise-grade account
-                                    security inside your Python development
-                                    stack.</p>
-                            </div>
+                        <article>
+                            <header><h3>Production-Grade Debugging &
+                                    Tracing</h3></header>
+                            <p>See exactly what your contracts are doing. Ape
+                                includes transaction tracing, gas profiling,
+                                revert detection, and decoded calldata
+                                output—giving developers full visibility during
+                                both development and live-network debugging.</p>
+                        </article>
 
-                            <!-- Feature 6 -->
-                            <div class="feature h-full">
-                                <h3>Powered by Python’s Scientific
-                                    Ecosystem</h3>
-                                <p>Ape integrates directly with Jupyter
-                                    Notebooks, Pandas, NumPy, and the entire
-                                    Python data science ecosystem. Analyze
-                                    on-chain data, model transactions, or
-                                    prototype trading algorithms in the same
-                                    environment where you deploy.</p>
-                            </div>
-                        </div>
+                        <article>
+                            <header><h3>Secure Account Management</h3></header>
+                            <p>Protect your on-chain operations with encrypted
+                                keyfiles, hardware-wallet support, and flexible
+                                signing flows. ApeSigner and AccountAPI give you
+                                enterprise-grade account security inside your
+                                Python development stack.</p>
+                        </article>
+
+                        <article>
+                            <header><h3>Powered by Python’s Scientific
+                                    Ecosystem</h3></header>
+                            <p>Ape integrates directly with Jupyter Notebooks,
+                                Pandas, NumPy, and the entire Python data
+                                science ecosystem. Analyze on-chain data, model
+                                transactions, or prototype trading algorithms in
+                                the same environment where you deploy.</p>
+                        </article>
                     </div>
                 </section>
 
                 <!-- Plugins Section -->
-                <section id="plugins" class="section section--alt-2 relative">
-                    <div class="mx-auto max-w-7xl px-6 sm:px-8">
-                        <div class="text-center mb-12">
-                            <h2
-                                class="text-3xl font-semibold tracking-tight text-neutral-100 sm:text-4xl">
-                                ApeWorX Supported Plugins
-                            </h2>
-                            <p class="mt-4 text-lg text-neutral-400">
-                                Extend your workflow with our extensive
-                                ecosystem.
-                            </p>
-                        </div>
-                        <div
-                            class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span
-                                    class="font-medium text-neutral-200">Vyper</span>
-                            </div>
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span
-                                    class="font-medium text-neutral-200">Solidity</span>
-                            </div>
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span
-                                    class="font-medium text-neutral-200">Etherscan</span>
-                            </div>
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span
-                                    class="font-medium text-neutral-200">Hardhat</span>
-                            </div>
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span
-                                    class="font-medium text-neutral-200">Starknet</span>
-                            </div>
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span
-                                    class="font-medium text-neutral-200">Tokens</span>
-                            </div>
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span
-                                    class="font-medium text-neutral-200">Ledger</span>
-                            </div>
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span
-                                    class="font-medium text-neutral-200">Foundry</span>
-                            </div>
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span
-                                    class="font-medium text-neutral-200">Alchemy</span>
-                            </div>
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span
-                                    class="font-medium text-neutral-200">Polygon</span>
-                            </div>
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span
-                                    class="font-medium text-neutral-200">ENS</span>
-                            </div>
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span
-                                    class="font-medium text-neutral-200">Arbitrum</span>
-                            </div>
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span
-                                    class="font-medium text-neutral-200">Jupyter
-                                    Notebook</span>
-                            </div>
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span class="font-medium text-neutral-200">Safe
-                                    Multisig</span>
-                            </div>
-                            <div
-                                class="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-6 text-center hover:bg-white/10 transition-colors">
-                                <span
-                                    class="font-medium text-neutral-200">QuickNode</span>
-                            </div>
-                        </div>
+                <section id="plugins" class="section--alt-2 relative">
+                    <hgroup class="text-center mb-12">
+                        <h2>ApeWorX Supported Plugins</h2>
+                        <p>Extend your workflow with our extensive
+                            ecosystem.</p>
+                    </hgroup>
+
+                    <!-- Using a grid with smaller auto-fit value for plugin tiles -->
+                    <div class="grid"
+                        style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">Vyper</span>
+                        </article>
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">Solidity</span>
+                        </article>
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">Etherscan</span>
+                        </article>
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">Hardhat</span>
+                        </article>
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">Starknet</span>
+                        </article>
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">Tokens</span>
+                        </article>
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">Ledger</span>
+                        </article>
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">Foundry</span>
+                        </article>
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">Alchemy</span>
+                        </article>
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">Polygon</span>
+                        </article>
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">ENS</span>
+                        </article>
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">Arbitrum</span>
+                        </article>
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">Jupyter Notebook</span>
+                        </article>
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">Safe Multisig</span>
+                        </article>
+                        <article
+                            class="text-center flex items-center justify-center p-6">
+                            <span class="font-medium">QuickNode</span>
+                        </article>
                     </div>
                 </section>
             </main>
 
-            <footer
-                class="relative border-t border-white/5 bg-[#0d0f11] py-12 sm:py-16">
-                <div class="mx-auto max-w-7xl px-6 sm:px-8">
-                    <div
-                        class="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:grid-cols-6 mb-8">
-                        <!-- Company -->
-                        <div class="col-span-2 sm:col-span-1">
-                            <div class="flex items-center gap-2 mb-4">
-                                <img src="/assets/logo.png" alt="ApeWorX Logo"
-                                    class="h-6 w-6 object-contain"
-                                    style="filter: brightness(0) invert(1);" />
-                                <span
-                                    class="font-semibold text-neutral-100">ApeWorX</span>
-                            </div>
-                            <p class="text-xs text-neutral-400 mb-4">
-                                Open-source Python tools for smart contract
-                                engineers and data scientists.
-                            </p>
-                            <div class="flex gap-3">
-                                <a href="https://github.com/ApeWorX"
-                                    target="_blank" rel="noreferrer"
-                                    class="text-neutral-400 hover:text-white transition-colors"
-                                    aria-label="GitHub">
-                                    <svg class="h-5 w-5" fill="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
-                                    </svg>
-                                </a>
-                                <a href="https://discord.gg/apeworx"
-                                    target="_blank" rel="noreferrer"
-                                    class="text-neutral-400 hover:text-white transition-colors"
-                                    aria-label="Discord">
-                                    <svg class="h-5 w-5" fill="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928-1.793 6.4-2.246 6.4-2.246s.272-1.313.272-2.648c0-1.336-.272-2.648-.272-2.648s-2.472-.453-6.4-2.246a.077.077 0 0 1-.078.01.076.076 0 0 1-.371-.292 10.2 10.2 0 0 0-.008-.128.077.077 0 0 1 .008-.128 13.107 13.107 0 0 1 1.872-.892.076.076 0 0 0 .041-.106c-.352-.699-.764-1.363-1.226-1.994a.077.077 0 0 0-.084-.028 19.9 19.9 0 0 0-5.993-3.03.077.077 0 0 0-.031-.057C-.32 13.58.533 9.046 3.645 4.397a.061.061 0 0 0 .032-.027zm-5.02 11.62c-1.182 0-2.156-1.085-2.156-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.156 2.42 0 1.333-.956 2.418-2.156 2.418zm5.385 0c-1.182 0-2.156-1.085-2.156-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.156 2.42 0 1.333-.946 2.418-2.156 2.418z" />
-                                    </svg>
-                                </a>
-                                <a href="https://twitter.com/ApeWorX"
-                                    target="_blank" rel="noreferrer"
-                                    class="text-neutral-400 hover:text-white transition-colors"
-                                    aria-label="Twitter">
-                                    <svg class="h-5 w-5" fill="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                    </svg>
-                                </a>
-                            </div>
+            <footer>
+                <div class="grid">
+                    <!-- Company -->
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <img src="/assets/logo.png" alt="ApeWorX Logo"
+                                class="h-6 w-6 object-contain"
+                                style="filter: brightness(0) invert(1);" />
+                            <span
+                                class="font-semibold text-neutral-100">ApeWorX</span>
                         </div>
-
-                        <!-- Products -->
-                        <div>
-                            <h4
-                                class="text-sm font-semibold text-neutral-100 mb-4">Products</h4>
-                            <ul class="space-y-3">
-                                <li><a href="/framework"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Ape
-                                        Framework</a></li>
-                                <li><a href="/silverback"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Silverback</a></li>
-                                <li><a href="/#ecosystem"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Ecosystem</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Resources -->
-                        <div>
-                            <h4
-                                class="text-sm font-semibold text-neutral-100 mb-4">Resources</h4>
-                            <ul class="space-y-3">
-                                <li><a href="https://docs.apeworx.io/"
-                                        target="_blank" rel="noreferrer"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Documentation</a></li>
-                                <li><a href="https://github.com/ApeWorX"
-                                        target="_blank" rel="noreferrer"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">GitHub</a></li>
-                                <li><a href="https://discord.gg/apeworx"
-                                        target="_blank" rel="noreferrer"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Discord</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Community -->
-                        <div>
-                            <h4
-                                class="text-sm font-semibold text-neutral-100 mb-4">Community</h4>
-                            <ul class="space-y-3">
-                                <li><a href="https://discord.gg/apeworx"
-                                        target="_blank" rel="noreferrer"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Discord</a></li>
-                                <li><a href="https://github.com/ApeWorX"
-                                        target="_blank" rel="noreferrer"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Contribute</a></li>
-                                <li><a href="/#community"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Testimonials</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Company -->
-                        <div>
-                            <h4
-                                class="text-sm font-semibold text-neutral-100 mb-4">Company</h4>
-                            <ul class="space-y-3">
-                                <li><a href="/about"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">About</a></li>
-                                <li><a href="/features"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Features</a></li>
-                                <li><a href="/#next-steps"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Get
-                                        Started</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Legal -->
-                        <div>
-                            <h4
-                                class="text-sm font-semibold text-neutral-100 mb-4">Legal</h4>
-                            <ul class="space-y-3">
-                                <li><a href="#"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Privacy
-                                        Policy</a></li>
-                                <li><a href="#"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">Terms
-                                        of Service</a></li>
-                                <li><a href="#"
-                                        class="text-xs text-neutral-400 hover:text-white transition-colors">License</a></li>
-                            </ul>
+                        <p class="text-xs text-neutral-400 mb-4">
+                            Open-source Python tools for smart contract
+                            engineers and data scientists.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/ApeWorX" target="_blank"
+                                aria-label="GitHub">
+                                <svg class="h-5 w-5" fill="currentColor"
+                                    viewBox="0 0 24 24"><path
+                                        d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
+                            </a>
+                            <a href="https://discord.gg/apeworx" target="_blank"
+                                aria-label="Discord">
+                                <svg class="h-5 w-5" fill="currentColor"
+                                    viewBox="0 0 24 24"><path
+                                        d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928-1.793 6.4-2.246 6.4-2.246s.272-1.313.272-2.648c0-1.336-.272-2.648-.272-2.648s-2.472-.453-6.4-2.246a.077.077 0 0 1-.078.01.076.076 0 0 1-.371-.292 10.2 10.2 0 0 0-.008-.128.077.077 0 0 1 .008-.128 13.107 13.107 0 0 1 1.872-.892.076.076 0 0 0 .041-.106c-.352-.699-.764-1.363-1.226-1.994a.077.077 0 0 0-.084-.028 19.9 19.9 0 0 0-5.993-3.03.077.077 0 0 0-.031-.057C-.32 13.58.533 9.046 3.645 4.397a.061.061 0 0 0 .032-.027zm-5.02 11.62c-1.182 0-2.156-1.085-2.156-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.156 2.42 0 1.333-.956 2.418-2.156 2.418zm5.385 0c-1.182 0-2.156-1.085-2.156-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.156 2.42 0 1.333-.946 2.418-2.156 2.418z" /></svg>
+                            </a>
+                            <a href="https://twitter.com/ApeWorX"
+                                target="_blank" aria-label="Twitter">
+                                <svg class="h-5 w-5" fill="currentColor"
+                                    viewBox="0 0 24 24"><path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="pt-8 border-t border-white/5">
-                        <div
-                            class="flex flex-col sm:flex-row justify-between items-center gap-4">
-                            <p class="text-xs text-neutral-500">
-                                &copy; <span x-data
-                                    x-text="new Date().getFullYear()"></span>
-                                ApeWorX LTD. All rights reserved.
-                            </p>
-                            <p class="text-xs text-neutral-500">
-                                Open-source and community-driven.
-                            </p>
-                        </div>
+                    <!-- Products -->
+                    <div>
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="/framework">Ape Framework</a></li>
+                            <li><a href="/silverback">Silverback</a></li>
+                            <li><a href="/#ecosystem">Ecosystem</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Resources -->
+                    <div>
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="https://docs.apeworx.io/"
+                                    target="_blank">Documentation</a></li>
+                            <li><a href="https://github.com/ApeWorX"
+                                    target="_blank">GitHub</a></li>
+                            <li><a href="https://discord.gg/apeworx"
+                                    target="_blank">Discord</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Community -->
+                    <div>
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="https://discord.gg/apeworx"
+                                    target="_blank">Discord</a></li>
+                            <li><a href="https://github.com/ApeWorX"
+                                    target="_blank">Contribute</a></li>
+                            <li><a href="/#community">Testimonials</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Company -->
+                    <div>
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/features">Features</a></li>
+                            <li><a href="/#next-steps">Get Started</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Legal -->
+                    <div>
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">License</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pt-8 border-t border-white/5 mt-8">
+                    <div
+                        class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <p class="text-xs text-neutral-500">
+                            &copy; <span x-data
+                                x-text="new Date().getFullYear()"></span>
+                            ApeWorX LTD. All rights reserved.
+                        </p>
+                        <p class="text-xs text-neutral-500">
+                            Open-source and community-driven.
+                        </p>
                     </div>
                 </div>
             </footer>

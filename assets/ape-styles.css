@@ -1,0 +1,165 @@
+/* Ape Semantic Defaults for Tailwind */
+/* Allows using semantic HTML tags with automatic styling */
+
+:root {
+    --ape-spacing: 1.5rem;
+    --ape-border-radius: 0.5rem;
+    /* Map to existing project variables */
+    --ape-bg: var(--color-bg-1, #050608);
+    --ape-text: var(--color-text, #e5e7eb);
+    --ape-border: rgba(0, 255, 255, 0.15);
+    --ape-primary: var(--color-accent, #00FFFF);
+}
+
+/* Typography Defaults (since Tailwind Preflight removes them) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Remove top margin for first child */
+:where(article, section, main)> :first-child {
+    margin-top: 0;
+}
+
+/* Navbar: <nav> */
+/* Stacks items horizontally, space-between by default */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+    align-items: center;
+}
+
+nav li {
+    padding: 0;
+    margin: 0;
+}
+
+/* Card: <article> */
+/* Automatically styled as a card container */
+article {
+    position: relative;
+    padding: var(--ape-spacing);
+    margin-bottom: var(--ape-spacing);
+    background-color: rgba(0, 255, 255, 0.02);
+    border: 1px solid var(--ape-border);
+    border-radius: var(--ape-border-radius);
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.02);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+article:hover {
+    border-color: rgba(0, 255, 255, 0.25);
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.05);
+}
+
+/* Card Header/Footer sections */
+article>header {
+    margin-bottom: var(--ape-spacing);
+    padding-bottom: calc(var(--ape-spacing) * 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+article>footer {
+    margin-top: var(--ape-spacing);
+    padding-top: calc(var(--ape-spacing) * 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Grouping: <hgroup> */
+hgroup {
+    margin-bottom: 1rem;
+}
+
+hgroup h1,
+hgroup h2,
+hgroup h3 {
+    margin-bottom: 0.25rem;
+}
+
+hgroup p,
+hgroup small {
+    color: var(--color-text-dim, #9ca3af);
+    font-size: 0.875rem;
+}
+
+/* Grid Layout helper */
+/* Usage: <div class="grid">...</div> */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--ape-spacing);
+}
+
+/* Buttons: Map <button> to .btn styles */
+button:not([class]),
+input[type="submit"]:not([class]),
+input[type="button"]:not([class]),
+[role="button"]:not([class]) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: rgba(0, 255, 255, 0.08);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    color: white;
+    transition: all 0.2s;
+}
+
+button:not([class]):hover,
+input[type="submit"]:not([class]):hover {
+    background-color: rgba(0, 255, 255, 0.12);
+    border-color: rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 6px rgba(0, 255, 255, 0.08);
+}
