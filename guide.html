@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Design System Guide - ApeWorX</title>
+        <link rel="stylesheet" href="assets/minimal.css">
+    </head>
+    <body>
+
+        <header>
+            <nav>
+                <a href="#" class="brand">
+                    <!-- Placeholder for logo -->
+                    <div
+                        style="width: 24px; height: 24px; background: white; border-radius: 50%;"></div>
+                    Design System
+                </a>
+                <div class="links">
+                    <a href="#core-toolkit">The Core 12</a>
+                    <a href="#typography">Typography</a>
+                    <a href="#components">Components</a>
+                    <a href="#layout">Layout</a>
+                    <a href="#active-examples">Real World Examples</a>
+                    <a href="#customization">Customization</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>Minimal Elemental Design System</h1>
+                <p class="hero-text">
+                    A lightweight, semantic CSS framework.
+                    Just use standard HTML tags and a few utility classes.
+                </p>
+                <div class="btn-group">
+                    <a href="#core-toolkit" role="button">See the Core 12</a>
+                    <a href="#customization" role="button" class="outline">How
+                        to Customize</a>
+                </div>
+            </section>
+
+            <!-- THE CORE TOOLKIT SECTION -->
+            <section id="core-toolkit">
+                <h2>The Core 12</h2>
+                <p>The entire design system consists of just these 12 key
+                    elements.</p>
+
+                <div class="grid-compact">
+                    <article>
+                        <h3>1. .container</h3>
+                        <small>Centers content</small>
+                        <code
+                            style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;div
+                            class="container"&gt;</code>
+                    </article>
+                    <article>
+                        <h3>2. .section-dark</h3>
+                        <small>Dark background</small>
+                        <code
+                            style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;section
+                            class="section-dark"&gt;</code>
+                    </article>
+                    <article>
+                        <h3>3. .grid</h3>
+                        <small>Responsive columns</small>
+                        <code
+                            style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;div
+                            class="grid"&gt;</code>
+                    </article>
+                    <article>
+                        <h3>4. .grid-compact</h3>
+                        <small>Tight columns</small>
+                        <code
+                            style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;div
+                            class="grid-compact"&gt;</code>
+                    </article>
+                    <article>
+                        <h3>5. article</h3>
+                        <small>Card component</small>
+                        <code
+                            style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;article&gt;</code>
+                    </article>
+                    <article>
+                        <h3>6. .hero</h3>
+                        <small>Hero section</small>
+                        <code
+                            style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;section
+                            class="hero"&gt;</code>
+                    </article>
+                    <article>
+                        <h3>7. button</h3>
+                        <small>Primary action</small>
+                        <code
+                            style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;button&gt;</code>
+                    </article>
+                    <article>
+                        <h3>8. .outline</h3>
+                        <small>Secondary action</small>
+                        <code
+                            style="display:block; margin-top:0.5rem; color:var(--accent);">class="outline"</code>
+                    </article>
+                    <article>
+                        <h3>9. .full</h3>
+                        <small>Full width</small>
+                        <code
+                            style="display:block; margin-top:0.5rem; color:var(--accent);">class="full"</code>
+                    </article>
+                    <article>
+                        <h3>10. .btn-group</h3>
+                        <small>Button container</small>
+                        <code
+                            style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;div
+                            class="btn-group"&gt;</code>
+                    </article>
+                    <article>
+                        <h3>11. .card-action</h3>
+                        <small>Card footer</small>
+                        <code
+                            style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;div
+                            class="card-action"&gt;</code>
+                    </article>
+                    <article>
+                        <h3>12. .footer-grid</h3>
+                        <small>Footer columns</small>
+                        <code
+                            style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;div
+                            class="footer-grid"&gt;</code>
+                    </article>
+                </div>
+            </section>
+
+            <section id="typography">
+                <h2>Typography</h2>
+                <p>No classes needed. Just use semantic HTML tags.</p>
+
+                <div
+                    style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border);">
+                    <h1>Heading 1</h1>
+                    <h2>Heading 2</h2>
+                    <h3>Heading 3</h3>
+                    <h4>Heading 4</h4>
+                    <p>
+                        This is a standard paragraph. It automatically inherits
+                        the muted text color
+                        and proper line height defined in the root variables.
+                    </p>
+                    <p>
+                        <a href="#">This is a standard link</a> within a
+                        paragraph.
+                    </p>
+                </div>
+            </section>
+
+            <section id="components" class="section-dark">
+                <div class="container">
+                    <h2>Components</h2>
+                    <p>Simple, reusable UI elements.</p>
+
+                    <div class="grid">
+                        <article>
+                            <h3>Buttons</h3>
+                            <p>Use <code>role="button"</code> or
+                                <code>&lt;button&gt;</code> tags.</p>
+
+                            <div
+                                style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                                <button>Primary</button>
+                                <button class="outline">Outline</button>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <button class="full">Full Width (.full)</button>
+                            </div>
+                        </article>
+
+                        <article>
+                            <h3>Cards (Articles)</h3>
+                            <p>
+                                Use the <code>&lt;article&gt;</code> tag.
+                                It automatically gets the border, background,
+                                and hover effect.
+                            </p>
+                            <div class="card-action">
+                                <small>This is a &lt;small&gt; tag for
+                                    metadata.</small>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="layout">
+                <h2>Layout Patterns</h2>
+                <p>Control spacing and arrangement with these few classes.</p>
+
+                <article style="margin-bottom: 2rem;">
+                    <h3>The Grid (<code>.grid</code>)</h3>
+                    <p>Responsive columns that adapt to screen size (min-width:
+                        300px).</p>
+                    <div class="grid" style="margin: 1rem 0;">
+                        <div
+                            style="background: var(--border); padding: 1rem; text-align: center;">Item
+                            1</div>
+                        <div
+                            style="background: var(--border); padding: 1rem; text-align: center;">Item
+                            2</div>
+                        <div
+                            style="background: var(--border); padding: 1rem; text-align: center;">Item
+                            3</div>
+                    </div>
+                </article>
+
+                <article>
+                    <h3>Compact Grid (<code>.grid-compact</code>)</h3>
+                    <p>Smaller items, tighter gaps (min-width: 150px).</p>
+                    <div class="grid-compact" style="margin: 1rem 0;">
+                        <div
+                            style="background: var(--border); padding: 1rem; text-align: center;">A</div>
+                        <div
+                            style="background: var(--border); padding: 1rem; text-align: center;">B</div>
+                        <div
+                            style="background: var(--border); padding: 1rem; text-align: center;">C</div>
+                        <div
+                            style="background: var(--border); padding: 1rem; text-align: center;">D</div>
+                    </div>
+                </article>
+            </section>
+
+            <section id="customization" class="section-dark">
+                <div class="container">
+                    <h2>Global Customization</h2>
+                    <p>
+                        Modify <code>assets/minimal.css</code> to change the
+                        theme instantly across the entire site.
+                    </p>
+
+                    <div class="grid">
+                        <article>
+                            <h3>Variables (<code>:root</code>)</h3>
+                            <pre
+                                style="background: #000; padding: 1rem; overflow-x: auto; color: #0f0; border-radius: 4px;">
+:root {
+  --bg: #050608;          /* Background Color */
+  --text: #e5e7eb;        /* Main Text Color */
+  --accent: #00FFFF;      /* Brand Accent */
+  --font-body: system-ui; /* Font Family */
+  --radius: 8px;          /* Border Radius */
+  --spacing: 2rem;        /* Spacing Unit */
+  --width: 1200px;        /* Max Content Width */
+}
+                        </pre>
+                            <p style="margin-top: 1rem;">
+                                Change <code>--accent</code> to update all
+                                buttons and links.
+                                Change <code>--radius</code> to make cards more
+                                square or round.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="active-examples">
+                <h2>Real World Examples</h2>
+                <p>Live components taken directly from the site pages.</p>
+
+                <div style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 2rem;">
+                    <h3>1. Hero Section (from Home)</h3>
+                    <p>Uses <code>.hero</code>, <code>.hero-logo</code>, <code>.hero-text</code>, and <code>.btn-group</code>.</p>
+                    
+                    <div style="border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; position: relative;">
+                        <section class="hero" style="padding: 4rem 1rem;">
+                            <!-- Placeholder for image since paths might vary -->
+                            <div style="width: 100px; height: 100px; background: rgba(0,255,255,0.1); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: var(--accent);">Logo</div>
+
+                            <h1>The ApeWorX Ecosystem</h1>
+                            <p class="hero-text">
+                                ApeWorX builds open-source tools for smart contract
+                                engineers, researchers, and data scientists.
+                            </p>
+
+                            <div class="btn-group">
+                                <button>Build with Ape</button>
+                                <button class="outline">Build with Silverback</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 2rem;">
+                    <h3>2. Feature Grid (from Framework)</h3>
+                    <p>Uses <code>section</code>, <code>h2</code> + <code>p</code> pattern, and <code>.grid</code> with <code>article</code>.</p>
+
+                    <div style="border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem;">
+                        <section>
+                            <h2>Features</h2>
+                            <p>The most powerful tools for on-chain development and data science.</p>
+            
+                            <div class="grid">
+                                <article>
+                                    <h3>Unified Multi-Chain Development</h3>
+                                    <p>Build, test, and deploy across local forks, testnets,
+                                        and live networks—simultaneously.</p>
+                                </article>
+            
+                                <article>
+                                    <h3>Modular Plugin Ecosystem</h3>
+                                    <p>Extend Ape into the exact toolkit your project needs
+                                        with first-party and community plugins.</p>
+                                </article>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 2rem;">
+                    <h3>3. Dark Section (from About)</h3>
+                    <p>Uses <code>.section-dark</code> and <code>.container</code>.</p>
+
+                    <div style="border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
+                        <section class="section-dark">
+                            <div class="container">
+                                <h2>Why Ape Exists</h2>
+                                <p>
+                                    Ape was created to fill the gap for a complete,
+                                    Python-first environment for building, testing, and
+                                    deploying smart contracts across multiple chains.
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <h3>Design System</h3>
+                    <p>Built for speed and consistency.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-legal">
+                &copy; 2025 Internal Guide
+            </div>
+        </footer>
+
+    </body>
+</html>

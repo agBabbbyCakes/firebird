@@ -21,7 +21,9 @@ body {
 }
 
 /* Box Sizing Reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -201,7 +203,8 @@ button.outline,
 button.full,
 [role="button"].full {
   width: 100%;
-  box-sizing: border-box; /* Explicitly ensure border-box for full width buttons */
+  box-sizing: border-box;
+  /* Explicitly ensure border-box for full width buttons */
 }
 
 .btn-group {

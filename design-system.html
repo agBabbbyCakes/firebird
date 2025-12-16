@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>ApeWorX Design System Guide</title>
+        <link rel="stylesheet" href="assets/minimal.css" />
+        <style>
+            /* Extra styles just for this demo page to show code snippets */
+            code {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 0.2rem 0.4rem;
+                border-radius: 4px;
+                font-family: monospace;
+                color: var(--accent);
+            }
+            pre {
+                background: rgba(0, 0, 0, 0.5);
+                padding: 1rem;
+                border-radius: var(--radius);
+                border: 1px solid var(--border);
+                overflow-x: auto;
+                color: var(--text-muted);
+            }
+            .swatch {
+                width: 50px;
+                height: 50px;
+                border-radius: var(--radius);
+                border: 1px solid var(--border);
+                display: inline-block;
+                margin-right: 1rem;
+                vertical-align: middle;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="brand">
+                    <!-- Placeholder logo -->
+                    <div style="width: 24px; height: 24px; background: white; border-radius: 50%;"></div>
+                    Design System
+                </div>
+                <div class="links">
+                    <a href="#setup">Setup</a>
+                    <a href="#customization">Customization</a>
+                    <a href="#components">Components</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>Minimal Elemental Design</h1>
+                <p class="hero-text">
+                    A lightweight, semantic CSS system. No complex classes, just HTML.
+                </p>
+                <div class="btn-group">
+                    <a href="#components" role="button">View Components</a>
+                    <a href="#setup" role="button" class="outline">How to Use</a>
+                </div>
+            </section>
+
+            <!-- 1. Setup -->
+            <section id="setup">
+                <h2>1. How to use</h2>
+                <p>Simply link the stylesheet in your HTML head. No build steps required.</p>
+                <article>
+                    <pre>&lt;link rel="stylesheet" href="/assets/minimal.css" /&gt;</pre>
+                </article>
+            </section>
+
+            <!-- 2. Customization -->
+            <section id="customization" class="section-dark">
+                <div class="container">
+                    <h2>2. Global Customization</h2>
+                    <p>Change the look globally by editing the <code>:root</code> variables in <code>assets/minimal.css</code>.</p>
+                    
+                    <div class="grid">
+                        <article>
+                            <h3>Colors</h3>
+                            <p>
+                                <span class="swatch" style="background: #050608;"></span> <code>--bg</code><br>
+                                <span class="swatch" style="background: #00FFFF;"></span> <code>--accent</code><br>
+                                <span class="swatch" style="background: rgba(255,255,255,0.1);"></span> <code>--border</code>
+                            </p>
+                            <small>Edit these to change the theme instantly.</small>
+                        </article>
+                        <article>
+                            <h3>Layout</h3>
+                            <p>
+                                <code>--width: 1200px</code> (Max site width)<br>
+                                <code>--spacing: 2rem</code> (Global padding)<br>
+                                <code>--radius: 8px</code> (Rounded corners)
+                            </p>
+                            <small>Controls spacing and geometry.</small>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Typography -->
+            <section id="typography">
+                <h2>3. Typography</h2>
+                <p>Headings and text style automatically based on semantic tags.</p>
+                
+                <div class="grid">
+                    <article>
+                        <h1>Heading 1</h1>
+                        <h2>Heading 2</h2>
+                        <h3>Heading 3</h3>
+                        <h4>Heading 4</h4>
+                        <p>Body text paragraph. Uses <code>--text-muted</code> color by default for better readability on dark backgrounds.</p>
+                    </article>
+                    <article>
+                        <h3>Code Example</h3>
+                        <pre>
+&lt;h1&gt;Page Title&lt;/h1&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;p&gt;Content goes here...&lt;/p&gt;</pre>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 4. Components -->
+            <section id="components" class="section-dark">
+                <div class="container">
+                    <h2>4. Components</h2>
+                    <p>Interactive elements and layout blocks.</p>
+
+                    <div class="grid">
+                        <!-- Buttons -->
+                        <article>
+                            <h3>Buttons</h3>
+                            <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+                                <button>Primary Button</button>
+                                <button class="outline">Outline Button</button>
+                                <button class="full">Full Width</button>
+                            </div>
+                            <small style="margin-top: 2rem;">
+                                Uses <code>&lt;button&gt;</code> or <code>&lt;a role="button"&gt;</code>
+                            </small>
+                        </article>
+
+                        <!-- Cards -->
+                        <article>
+                            <h3>Cards (Article)</h3>
+                            <p>Use the <code>&lt;article&gt;</code> tag to create cards automatically.</p>
+                            <div class="card-action">
+                                <button class="full outline">Action</button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <h3>Grid Layouts</h3>
+                    <p>Use <code>.grid</code> for standard content or <code>.grid-compact</code> for smaller items.</p>
+                    
+                    <div class="grid-compact">
+                        <article>Item 1</article>
+                        <article>Item 2</article>
+                        <article>Item 3</article>
+                        <article>Item 4</article>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="footer-legal">
+                Internal Documentation for ApeWorX Design System
+            </div>
+        </footer>
+    </body>
+</html>
