@@ -87,7 +87,7 @@ nav .links {
   h1 {
     font-size: 2.5rem;
   }
-  
+
   nav .links {
     display: none;
   }
@@ -231,7 +231,7 @@ button.full,
   flex-wrap: wrap;
 }
 
-section > footer {
+section>footer {
   margin-top: 3rem;
   text-align: center;
 }
@@ -292,13 +292,13 @@ section.secondary .container {
 }
 
 /* Footer */
-body > footer {
+body>footer {
   padding: var(--spacing);
   max-width: var(--width);
   margin: 0 auto;
 }
 
-body > footer .grid {
+body>footer .grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 2rem;
@@ -306,28 +306,28 @@ body > footer .grid {
 }
 
 @media (max-width: 768px) {
-  body > footer .grid {
+  body>footer .grid {
     grid-template-columns: 1fr;
   }
 }
 
-body > footer h3 {
+body>footer h3 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
-body > footer p {
+body>footer p {
   font-size: 0.9rem;
   max-width: 300px;
 }
 
-body > footer ul {
+body>footer ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-body > footer li {
+body>footer li {
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
   color: var(--text-muted);
