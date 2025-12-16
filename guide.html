@@ -47,7 +47,7 @@
                 <p>The entire design system consists of just these 12 key
                     elements.</p>
 
-                <div class="grid-compact">
+                <div class="grid compact">
                     <article>
                         <h3>1. .container</h3>
                         <small>Centers content</small>
@@ -56,11 +56,11 @@
                             class="container"&gt;</code>
                     </article>
                     <article>
-                        <h3>2. .section-dark</h3>
+                        <h3>2. section.secondary</h3>
                         <small>Dark background</small>
                         <code
                             style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;section
-                            class="section-dark"&gt;</code>
+                            class="secondary"&gt;</code>
                     </article>
                     <article>
                         <h3>3. .grid</h3>
@@ -70,11 +70,11 @@
                             class="grid"&gt;</code>
                     </article>
                     <article>
-                        <h3>4. .grid-compact</h3>
+                        <h3>4. .grid.compact</h3>
                         <small>Tight columns</small>
                         <code
                             style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;div
-                            class="grid-compact"&gt;</code>
+                            class="grid compact"&gt;</code>
                     </article>
                     <article>
                         <h3>5. article</h3>
@@ -115,18 +115,17 @@
                             class="btn-group"&gt;</code>
                     </article>
                     <article>
-                        <h3>11. .card-action</h3>
+                        <h3>11. article footer</h3>
                         <small>Card footer</small>
                         <code
-                            style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;div
-                            class="card-action"&gt;</code>
+                            style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;footer&gt;</code>
                     </article>
                     <article>
-                        <h3>12. .footer-grid</h3>
+                        <h3>12. footer .grid</h3>
                         <small>Footer columns</small>
                         <code
                             style="display:block; margin-top:0.5rem; color:var(--accent);">&lt;div
-                            class="footer-grid"&gt;</code>
+                            class="grid"&gt;</code>
                     </article>
                 </div>
             </section>
@@ -153,7 +152,7 @@
                 </div>
             </section>
 
-            <section id="components" class="section-dark">
+            <section id="components" class="secondary">
                 <div class="container">
                     <h2>Components</h2>
                     <p>Simple, reusable UI elements.</p>
@@ -181,10 +180,10 @@
                                 It automatically gets the border, background,
                                 and hover effect.
                             </p>
-                            <div class="card-action">
+                            <footer>
                                 <small>This is a &lt;small&gt; tag for
                                     metadata.</small>
-                            </div>
+                            </footer>
                         </article>
                     </div>
                 </div>
@@ -212,9 +211,9 @@
                 </article>
 
                 <article>
-                    <h3>Compact Grid (<code>.grid-compact</code>)</h3>
+                    <h3>Compact Grid (<code>.grid.compact</code>)</h3>
                     <p>Smaller items, tighter gaps (min-width: 150px).</p>
-                    <div class="grid-compact" style="margin: 1rem 0;">
+                    <div class="grid compact" style="margin: 1rem 0;">
                         <div
                             style="background: var(--border); padding: 1rem; text-align: center;">A</div>
                         <div
@@ -227,7 +226,7 @@
                 </article>
             </section>
 
-            <section id="customization" class="section-dark">
+            <section id="customization" class="secondary">
                 <div class="container">
                     <h2>Global Customization</h2>
                     <p>
@@ -332,12 +331,12 @@
                 <div
                     style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 2rem;">
                     <h3>3. Dark Section (from About)</h3>
-                    <p>Uses <code>.section-dark</code> and
+                    <p>Uses <code>section.secondary</code> and
                         <code>.container</code>.</p>
 
                     <div
                         style="border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
-                        <section class="section-dark">
+                        <section class="secondary">
                             <div class="container">
                                 <h2>Why Ape Exists</h2>
                                 <p>
@@ -357,7 +356,7 @@
         </main>
 
         <footer>
-            <div class="footer-grid">
+            <div class="grid">
                 <div class="footer-col brand-col">
                     <h3>Design System</h3>
                     <p>Built for speed and consistency.</p>

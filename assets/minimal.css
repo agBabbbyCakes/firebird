@@ -123,6 +123,18 @@ p {
   margin-bottom: 1.5rem;
 }
 
+/* Make links in paragraphs visible */
+p a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+p a:hover {
+  text-decoration: none;
+}
+
 /* Section Typography - Auto-center headings in sections */
 section h2 {
   text-align: center;
@@ -160,7 +172,8 @@ article small {
   color: var(--text-muted);
 }
 
-.card-action {
+/* Card footer standard */
+article footer {
   margin-top: auto;
   padding-top: 1rem;
 }
@@ -228,28 +241,26 @@ button.full,
   margin: 2rem 0;
 }
 
-.grid-compact {
-  display: grid;
+.grid.compact {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
-  margin: 2rem 0;
 }
 
 /* Target articles inside compact grids to center content */
-.grid-compact article {
+.grid.compact article {
   text-align: center;
   justify-content: center;
   align-items: center;
 }
 
-.section-dark {
+section.secondary {
   background: rgba(255, 255, 255, 0.02);
   margin: 0 calc(var(--spacing) * -1);
   padding: var(--spacing) var(--spacing);
 }
 
 /* Inner container for dark sections to respect max-width */
-.section-dark .container {
+section.secondary .container {
   max-width: var(--width);
   margin: 0 auto;
 }
@@ -278,29 +289,29 @@ button.full,
 }
 
 /* Footer */
-.footer-grid {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+footer .grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 2rem;
+  margin: 0;
 }
 
-.footer-col {
-  flex: 1;
-  min-width: 150px;
+@media (max-width: 768px) {
+  footer .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
 }
 
-.footer-col.brand-col {
-  flex: 2;
-  min-width: 300px;
-}
-
-.footer-col.brand-col h3 {
+.footer-col h3 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
-.footer-col.brand-col p {
+.footer-col p {
   font-size: 0.9rem;
   max-width: 300px;
 }
@@ -324,14 +335,4 @@ button.full,
   font-size: 0.8rem;
   color: var(--text-muted);
   text-align: center;
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  .footer-col.brand-col {
-    flex: 100%;
-  }
 }
