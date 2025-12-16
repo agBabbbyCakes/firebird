@@ -84,9 +84,12 @@ nav .links {
 }
 
 @media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
   nav .links {
     display: none;
-    /* Hide links on mobile for now */
   }
 }
 
@@ -228,7 +231,7 @@ button.full,
   flex-wrap: wrap;
 }
 
-.section-footer {
+section > footer {
   margin-top: 3rem;
   text-align: center;
 }
@@ -289,7 +292,13 @@ section.secondary .container {
 }
 
 /* Footer */
-footer .grid {
+body > footer {
+  padding: var(--spacing);
+  max-width: var(--width);
+  margin: 0 auto;
+}
+
+body > footer .grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 2rem;
@@ -297,38 +306,34 @@ footer .grid {
 }
 
 @media (max-width: 768px) {
-  footer .grid {
+  body > footer .grid {
     grid-template-columns: 1fr;
-  }
-
-  h1 {
-    font-size: 2.5rem;
   }
 }
 
-.footer-col h3 {
+body > footer h3 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
-.footer-col p {
+body > footer p {
   font-size: 0.9rem;
   max-width: 300px;
 }
 
-.footer-menu {
+body > footer ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-menu li {
+body > footer li {
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
   color: var(--text-muted);
 }
 
-.footer-legal {
+.legal {
   border-top: 1px solid var(--border);
   margin-top: 3rem;
   padding-top: 1.5rem;
