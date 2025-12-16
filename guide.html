@@ -238,25 +238,35 @@
 
                     <div class="grid">
                         <article>
-                            <h3>Variables (<code>:root</code>)</h3>
+                            <h3>1. Theme Colors</h3>
+                            <p>Control the core look and feel.</p>
                             <pre
                                 style="background: #000; padding: 1rem; overflow-x: auto; color: #0f0; border-radius: 4px;">
 :root {
-  --bg: #050608;          /* Background Color */
-  --text: #e5e7eb;        /* Main Text Color */
-  --accent: #00FFFF;      /* Brand Accent */
-  --font-body: system-ui; /* Font Family */
-  --radius: 8px;          /* Border Radius */
-  --spacing: 2rem;        /* Spacing Unit */
-  --width: 1200px;        /* Max Content Width */
+  --bg: #050608;    /* Page Background */
+  --text: #e5e7eb;  /* Body Text */
+  --accent: #00FFFF; /* Interactive Elements */
 }
-                        </pre>
-                            <p style="margin-top: 1rem;">
-                                Change <code>--accent</code> to update all
-                                buttons and links.
-                                Change <code>--radius</code> to make cards more
-                                square or round.
-                            </p>
+                            </pre>
+                            <footer>
+                                <small>Tip: Change <code>--accent</code> to your brand color.</small>
+                            </footer>
+                        </article>
+
+                        <article>
+                            <h3>2. Layout & Spacing</h3>
+                            <p>Adjust the geometry of the site.</p>
+                            <pre
+                                style="background: #000; padding: 1rem; overflow-x: auto; color: #0f0; border-radius: 4px;">
+:root {
+  --radius: 8px;     /* Card/Button Roundness */
+  --spacing: 2rem;   /* Padding Unit */
+  --width: 1200px;   /* Max Container Width */
+}
+                            </pre>
+                            <footer>
+                                <small>Tip: Set <code>--radius: 0</code> for a brutalist look.</small>
+                            </footer>
                         </article>
                     </div>
                 </div>
